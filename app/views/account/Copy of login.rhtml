@@ -1,0 +1,97 @@
+<body>
+<table width="1024" border="0">
+  <tr>
+    <td width="800" height="450" bgcolor="#D2DBEC">
+	<table width="800" height="450" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="800" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="800" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "800", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+		  <table width="800" border="0" align="center" bgcolor="#d2dbec">
+            <tr>
+              <th height="25" scope="col"><span class="body2"><a href="index.htm">HOME</a> | <a href="aboutus.htm">ABOUT US</a> | <a href="faq.htm">FAQ</a> | <a href="contactus.htm">CONTACT US</a></span> </th>
+            </tr>
+          </table>
+          
+          <table width="200" height="200" border="0" align="center" cellspacing="1" valign = top>
+            <tr></tr>
+			<tr><%= error_messages_for :user %></tr>
+			<% form_tag do -%>
+				<tr height = 50><td><label for="login">Login</label><td><%= text_field_tag 'login' %></td></tr>
+				<tr height = 50><td width=150><label for="password">Password</label></td><td><%= password_field_tag 'password' %></td></tr>
+				<tr height = 50><td colspan=2><%= submit_tag 'Log in' %></td><td></td></tr>
+				<tr><td width = 300 colspan=2><%= link_to "Create New Login", :controller => "/account", :action => "signup" %></td></tr>
+
+			<% end -%>
+            </tr>
+          </table>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+			<tr>
+              <td><div align="center">
+              	<%= image_tag "dfo.jpg", :alt => "1", :width => "228", :height => "50", :border => "0" %>
+				<%= image_tag "trentu.jpg", :alt => "1", :width => "162", :height => "50", :border => "0" %>
+				<%= image_tag "wwf.jpg", :alt => "1", :width => "37", :height => "50", :border => "0" %>
+				<%= image_tag "nrdpfc.jpg", :alt => "1", :width => "67", :height => "50", :border => "0"  %>
+				<%= image_tag "nea.jpg", :alt => "1", :width => "111", :height => "50", :border => "0" %>
+				<%= image_tag "canadianwhale.jpg", :alt => "1", :width => "153", :height => "50", :border => "0" %>
+				</div></td>
+			</tr>
+      </table>
+    <p>&nbsp;</p></td>
+  </tr>
+   
+</table></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+    //image cycling javascript code    
+    var imageShown = 1;
+    var intervalID = setInterval("CycleImage()", 7000);  //initial cycle
+
+    function showImage(imgNum) {
+        clearInterval(intervalID); //turn off initial timer  
+              
+        for (var i = 1; i <= 5; i++) {
+            //turn off all pictures
+            document.getElementById("imgBig" + i).style.display = 'none';
+        }
+        //turn on requested image
+        document.getElementById("imgBig" + imgNum).style.display = 'block';
+        imageShown = imgNum; //track which is shown for cycling
+            
+        //after 10 seconds resume cycling
+        setTimeout("setNormalCycle()", 14000); //after click, start slower cycle
+        //intervalID =setInterval("CycleImage()", 1000); //after click, start slower cycle
+}
+
+function setNormalCycle() {
+    clearInterval(intervalID);
+    intervalID = setInterval("CycleImage()", 7000); 
+}
+
+function CycleImage()
+{
+    //Increment which image is not hidden
+    document.getElementById("imgBig" + imageShown).style.display = 'none';
+    imageShown++;
+    if (imageShown > 5) { imageShown = 1; }
+    document.getElementById("imgBig" + imageShown).style.display = 'block';
+    
+}
+</script>
+
+
+
+

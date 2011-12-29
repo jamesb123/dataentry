@@ -1,0 +1,39 @@
+<html>
+	<%= stylesheet_link_tag "basic" %>
+
+<table width="1024" height=900 border="0">
+  <tr>
+    <td width=900 height="850" bgcolor="#D2DBEC">
+	<table width="900" height="850" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="900" height="850" align="center" valign="top" bgcolor="#FFFFFF"><table width="800" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+
+<h3><%= link_to 'Home', menu_path %></h3>
+<h2>Right Whale Sample Listing in date order for <%= current_user.to_s  %></h2>
+<h2>Click on Edit or Track for one Sample </h2>
+
+<table width="300" height="195" border="1" align="center" cellpadding = "1" >
+  <tr>
+  	<th width=25%>Date Submitted</th>
+	<th width=25%>Field Code</th>
+	<th width=25%>ACTION</th>
+	<th width=25%>ACTION</th>
+  </tr>
+
+<% for sample in @sample %>
+ <tr>
+  	<td height=20><%= nice_date_display(sample.date_submitted)%>
+  	<td height=20 ><%= sample.field_code %>
+    <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
+    <td><%= link_to 'Track', sample %></td>
+<!---    <td><%= link_to 'Destroy', sample, :confirm => 'Are you sure?', :method => :delete %></td>   --->
+  </tr>
+<% end %>
+
+
+</table>

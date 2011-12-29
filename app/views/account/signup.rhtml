@@ -1,0 +1,74 @@
+<html>
+	<%= stylesheet_link_tag "basic" %>
+
+<table width="1024" border="0">
+  <tr>
+    <td width="900" height="450" bgcolor="#D2DBEC">
+	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+
+<table width="500" height="495" border="0" align="center" cellspacing="2" cellpadding = "2">
+            <tr>	</tr>
+		<tr><td  colspan=2><%= link_to 'Home', samples_path %></td></tr>
+
+<%= error_messages_for :user %>
+<tr><td colspan=2>Welcome to the Right Whale Registration<br>
+After you have registered below, the project owner needs to give you permission to work on their project.  <br>
+Until that happens, you'll be redirected to this page.<br>
+Please Note: 4 characters is the minimum size for login name and password  <br>
+Please contact us directly if registration is urgent.</td><td></td></tr>
+
+<% form_for :user do |f| -%>
+				<tr height = 50><td width=150><label for="Your Real Name">Your Real Name</label><td><%= f.text_field :name %></td></tr>
+				<tr height = 50><td width=150><label for="Your login">Login</label><td><%= f.text_field :login %></td></tr>
+				<tr height = 50><td width=150><label for="Your password">Password</label></td><td><%= f.text_field :password %></td></tr>
+				<tr height = 50><td width=150><label for="Password Confirmation">Password Confirmation</label></td><td><%= f.text_field :password_confirmation %></td></tr>
+				<tr height = 50><td width=150><label for="Your Email">Email</label></td><td><%= f.text_field :email %></td></tr>
+				<tr><td width = 300 colspan=2><%= submit_tag "Create New Login", :controller => "/account", :action => "signup" %></td></tr>
+
+<!----
+<p><label for="login">Login</label><br/>
+<%= f.text_field :login %></p>
+
+<p><label for="email">Email</label><br/>
+<%= f.text_field :email %></p>
+
+<p><label for="password">Password</label><br/>
+<%= f.password_field :password %></p>
+
+<p><label for="password_confirmation">Confirm Password</label><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= submit_tag 'Sign up' %></p>
+
+<%= link_to "Home", :controller => "/samples" %>
+--->
+
+<% end -%>
+        </tr>
+        </table>
+			<tr>
+              <td><div align="center">
+              	<%= image_tag "dfo.jpg", :alt => "1", :width => "228", :height => "50", :border => "0" %>
+				<%= image_tag "trentu.jpg", :alt => "1", :width => "162", :height => "50", :border => "0" %>
+				<%= image_tag "wwf.jpg", :alt => "1", :width => "37", :height => "50", :border => "0" %>
+				<%= image_tag "nrdpfc.jpg", :alt => "1", :width => "67", :height => "50", :border => "0"  %>
+				<%= image_tag "nea.jpg", :alt => "1", :width => "111", :height => "50", :border => "0" %>
+				<%= image_tag "canadianwhale.jpg", :alt => "1", :width => "153", :height => "50", :border => "0" %>
+				</div></td>
+			</tr>
+      </table>
+    <p>&nbsp;</p></td>
+  </tr>
+   
+</table></td>
+  </tr>
+</table>
+
+

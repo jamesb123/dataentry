@@ -1,0 +1,101 @@
+# Logfile created on Sat Dec 17 15:52:39 -0500 2011
+
+Processing SamplesController#index (for 127.0.0.1 at 2011-12-17 15:53:01) [GET]
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 172ms (View: 94, DB: 31) | 200 OK [http://localhost/]
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2011-12-17 15:53:06) [GET]
+  Parameters: {"id"=>"92"}
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/samples/92]
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2011-12-17 15:53:46) [GET]
+  Parameters: {"id"=>"92"}
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/samples/92]
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2011-12-17 15:53:48) [GET]
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/menu]
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2011-12-17 15:53:51) [GET]
+Rendering template within layouts/samples
+Rendering samples/new
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Organization) on line #32 of app/views/samples/new.html.erb:
+29: 	<tr><td><%= f.label :collected_on_month %></td><td><%= f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, :include_blank => true) %></td><td>Choose Month from drop down list 1-12 or blank</td></tr>
+30: 	<tr><td><%= f.label :collected_on_year %></td><td><%= f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, :include_blank => true) %></td><td>Choose Year from drop down list</td></tr>
+31: 	<tr><td><%= f.label :sample_bc %></td><td><%= f.text_field :sample_bc %></td><td>Sample Bar Code if available</td></tr>
+32: 	<tr><td><%= f.label :organization_id %></td><td><%= f.collection_select( :organization_id, Organization.find(:all), :id, :org_name, :include_blank => true) %></td><td>The team who collected the sample</td></tr>
+33: 	<tr><td><%= f.label :field_indent, 'Field Identification (NEA)'%></td><td><%= f.text_field :field_ident %></td><td>The potential NEA # of the individual sampled</td></tr>
+34: 	<tr><td><%= f.label :tissue_type %></td><td><%= f.collection_select( :tissue_type , Sample::TT, :to_s, :to_s, :include_blank => true) %></td><td>Choose Tissue type from drop down list</td></tr>
+35: 	<tr><td><%= f.label :shipping_date %></td><td><%= f.text_field :shipping_date %></td><td>The date you shipped the sample if known - Can be filled in later</td></tr>
+
+    app/views/samples/new.html.erb:32
+    app/views/samples/new.html.erb:23
+    app/controllers/samples_controller.rb:68:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2011-12-17 17:44:15) [GET]
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 3453ms (View: 2094, DB: 1172) | 200 OK [http://localhost/]
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2011-12-17 17:44:33) [GET]
+  Parameters: {"id"=>"92"}
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 188ms (View: 16, DB: 172) | 200 OK [http://localhost/samples/92]
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2011-12-17 17:45:53) [GET]
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2011-12-17 17:49:35) [GET]
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 141ms (View: 62, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2011-12-17 17:49:39) [GET]
+  Parameters: {"id"=>"92"}
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/samples/92]
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2011-12-17 22:22:43) [GET]
+Redirected to http://localhost:3005/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/menu]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2011-12-17 22:22:43) [GET]
+Rendering account/login
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]

@@ -1,0 +1,15 @@
+<html>
+	<%= stylesheet_link_tag "basic" %>
+
+TEST Right Whale Sample Listing  - Logged in as: <%= current_user.to_s %>
+
+<%= link_to 'Back', samples_path %>
+
+<% @samples.each do |s|%>
+  	<%= s.field_code %>
+  	<%= s.organization %>
+  	<%= s.comments %>
+<% end %>
+
+<%= link_to 'Edit', edit_sample_path(sample) %></td>
+

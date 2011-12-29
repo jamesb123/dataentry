@@ -1,0 +1,60 @@
+<html>
+	<%= stylesheet_link_tag "basic" %>
+
+<table width="1024" border="0">
+  <tr>
+    <td width="900" height="450" bgcolor="#D2DBEC">
+	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="900" height="600" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+
+	<h3><%= link_to 'Home', menu_path %></h3>
+	<h3>Right Whale Sample Data Submitted <%= nice_date_display(@sample.date_submitted) %> by <%= current_user.to_s %></h3>
+
+	<table width="300" height="100" border="1px" align="center" cellspacing="2" cellpadding = "2">
+		<tr><th>Name</th><th>Value</th></tr>
+	  	<tr><td width=200 >Field Code</td><td width=200 ><%= @sample.field_code %></td></tr>
+		<tr><td>Submitted Date</td><td ><%= nice_date_display(@sample.date_submitted) %></td></tr>
+		<tr><td>Received Date</td><td ><%= nice_date_display(@sample.date_received) %></td></tr>
+		<tr><td>Extraction Date</td><td><%= @sample.extraction_date %></td>
+		<tr><td>Shipping Date</td><td><%= @sample.shipping_date %></td>
+		<tr><td>Export Permit</td></td><td><%= @sample.export_permit %></td>
+
+	<% @sample.genders.each do |g| %>
+		<tr><td>Gender</td><td>  <%= g.gender %> </td></tr>
+		<tr><td>Sexing Date</td><td>  <%= nice_date_display(g.date_genotyped) %> </td></tr>
+	<% end %>		
+	<% @sample.dna_results.each do |d| %>
+		<tr><td>Extraction Date</td><td>  <%= d.extraction_date %> </td></tr>
+	<% end %>		
+	<% @sample.mt_dnas.each do |m| %>
+		<tr><td>Haplotype</td><td>  <%= m.haplotype %> </td></tr>
+		<tr><td>Date Sequenced</td><td>  <%= m.date_sequenced %> </td></tr>
+	<% end %>		
+
+<!---- keep this for later 
+<% form_for(@sample) do |f| %>
+	<%= f.error_messages %>
+
+	<% f.fields_for :genders do |gender_fields| %>
+		<tr><td>Gender</td><td> <%= gender_fields.text_field :gender %></td>
+		<tr><td>Sexing Date</td><td><%= gender_fields.text_field :date_genotyped %></td>
+	<%end%> 
+
+	<% f.fields_for :dna_results do |dna_fields| %>
+		<tr><td>Extraction Date</td><td><%= dna_fields.text_field :extraction_date %></td>
+	<%end%> 
+	
+	<% f.fields_for :mt_dnas do |mt_dna_fields| %>
+		<tr><td>Haplotype</td><td><%= mt_dna_fields.text_field :haplotype %></td>
+		<tr><td>Haplotype Date</td><td><%= mt_dna_fields.text_field :date_sequenced %></td>
+	<%end%> 
+
+<%end%>
+---->
+</table>

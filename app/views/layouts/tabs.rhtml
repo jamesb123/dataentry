@@ -1,0 +1,17 @@
+<% @using_tabs = true %>
+<% content_for :tabs do %>
+
+      <ul id="tabs">
+        <%= build_main_tabs %>
+      </ul>
+<% end %>
+<% content_for :sub_tabs do %>
+    <% depth = 0 %>
+    <% while @sub_tabs %>
+      <div id="sub_tabs" class="level_<%=depth += 1%>">
+      <%= build_sub_tabs(@sub_tabs) %>
+      </div>
+    <% end %>
+  <br clear='both'/>
+<% end %>
+<%= render "layouts/master.rhtml"%>
