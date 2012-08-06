@@ -12,6 +12,23 @@ TT = [ "Skin", "Muscle", "Bone", "Brain", "Kidney", "Heart", "Other" ]
 DD = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
 YY = ["2007","2008","2009","2010","2011","2012","2013","2014","2015"]
 
+class TrueClass
+  def yesno
+    "Yes"
+  end
+end
+
+class FalseClass
+  def yesno
+    "No"
+  end
+end
+class NilClass
+  def yesno
+    " "
+  end
+end
+
 class ActiveRecord::Base
   def self.find_all_by_example(record, *attributes)
     conditions = Array.new
@@ -26,6 +43,8 @@ class ActiveRecord::Base
 end
 
 class ApplicationController < ActionController::Base
+   helper :all # include all helpers, all the time
+
 #  # Pick a unique cookie name to distinguish our session data from others'
 #  session :session_key => '_nrdpfc_session_id'
   include AuthenticatedSystem

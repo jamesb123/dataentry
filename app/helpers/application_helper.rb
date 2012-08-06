@@ -7,7 +7,6 @@ module ApplicationHelper
     return (the_date ? the_date.strftime('%Y.%m.%d') : '')
   end
 
-
   def project_form_column(record, input_name)
     projects = current_user.is_admin ?
                  Project.find(:all, :select => "id, name") :

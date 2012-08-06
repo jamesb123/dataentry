@@ -99,3 +99,585 @@ Completed in 16ms (DB: 0) | 302 Found [http://localhost/menu]
 Processing AccountController#login (for 127.0.0.1 at 2011-12-17 22:22:43) [GET]
 Rendering account/login
 Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-20 13:29:50) [GET]
+Rendering account/login
+Completed in 484ms (View: 484, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-03-22 10:31:08) [GET]
+Redirected to http://localhost:3005/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 406ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-22 10:31:08) [GET]
+Rendering account/login
+Completed in 156ms (View: 141, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-22 10:31:23) [POST]
+  Parameters: {"authenticity_token"=>"m1WFiHoC+BNUr1icQYiZJST/zieMRlaZ4qhx5oAtj6g=", "login"=>"tester", "password"=>"jester", "commit"=>"Log in"}
+
+ActiveRecord::StatementInvalid (Mysql::Error: query: not connected: SELECT * FROM `users` WHERE (`users`.`login` = 'tester')  LIMIT 1):
+  app/models/user.rb:110:in `authenticate'
+  app/controllers/account_controller.rb:21:in `login'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-22 11:33:00) [GET]
+Rendering account/login
+Completed in 344ms (View: 344, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-22 11:33:04) [POST]
+  Parameters: {"login"=>"tester", "authenticity_token"=>"m1WFiHoC+BNUr1icQYiZJST/zieMRlaZ4qhx5oAtj6g=", "password"=>"jester", "commit"=>"Log in"}
+
+ActiveRecord::StatementInvalid (Mysql::Error: query: not connected: SELECT * FROM `users` WHERE (`users`.`login` = 'tester')  LIMIT 1):
+  app/models/user.rb:110:in `authenticate'
+  app/controllers/account_controller.rb:21:in `login'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-03-22 11:35:30) [GET]
+Redirected to http://localhost:3005/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-22 11:35:30) [GET]
+Rendering account/login
+Completed in 172ms (View: 156, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-03-22 11:35:32) [POST]
+  Parameters: {"login"=>"tester", "authenticity_token"=>"m1WFiHoC+BNUr1icQYiZJST/zieMRlaZ4qhx5oAtj6g=", "password"=>"jester", "commit"=>"Log in"}
+
+ActiveRecord::StatementInvalid (Mysql::Error: query: not connected: SELECT * FROM `users` WHERE (`users`.`login` = 'tester')  LIMIT 1):
+  app/models/user.rb:110:in `authenticate'
+  app/controllers/account_controller.rb:21:in `login'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-05-01 18:25:36) [GET]
+Redirected to http://localhost:3005/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 391ms (DB: 16) | 302 Found [http://localhost/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-01 18:25:37) [GET]
+Rendering account/login
+Completed in 250ms (View: 250, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-01 18:25:40) [POST]
+  Parameters: {"authenticity_token"=>"enDn1se+2QaSCQOLhtc1m7JOS6JobXL2Z7RlEbxoR98=", "commit"=>"Log in", "password"=>"jester", "login"=>"tester"}
+Rendering account/login
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-01 18:25:47) [POST]
+  Parameters: {"authenticity_token"=>"enDn1se+2QaSCQOLhtc1m7JOS6JobXL2Z7RlEbxoR98=", "commit"=>"Log in", "password"=>"jester", "login"=>"tester"}
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-01 18:25:51) [POST]
+  Parameters: {"authenticity_token"=>"enDn1se+2QaSCQOLhtc1m7JOS6JobXL2Z7RlEbxoR98=", "commit"=>"Log in", "password"=>"jester", "login"=>"tester"}
+Rendering account/login
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-01 18:25:57) [POST]
+  Parameters: {"authenticity_token"=>"enDn1se+2QaSCQOLhtc1m7JOS6JobXL2Z7RlEbxoR98=", "commit"=>"Log in", "password"=>"bagend", "login"=>"james"}
+Redirected to http://localhost:3005/
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/account/login]
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-05-01 18:25:57) [GET]
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-05-01 18:26:03) [GET]
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 1031ms (View: 141, DB: 62) | 200 OK [http://localhost/samples/new]
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2012-05-01 18:26:07) [POST]
+  Parameters: {"authenticity_token"=>"enDn1se+2QaSCQOLhtc1m7JOS6JobXL2Z7RlEbxoR98=", "commit"=>"Create", "sample"=>{"shipping_date"=>"", "field_ident"=>"", "collected_on_day"=>"", "photo_id"=>"", "text_tissue_type"=>"", "field_code"=>"", "date_submitted"=>"2012-05-01", "comments"=>"", "remote_data_entry"=>"true", "project_id"=>"1", "current_location"=>"", "organization_id"=>"", "organism_index"=>"", "sample_bc"=>"", "submitted_by"=>"James Burrett", "import_permit"=>"CA027", "collected_on_year"=>"", "user_id"=>"3", "export_permit"=>"", "collected_on_month"=>""}}
+
+ArgumentError (invalid date):
+  c:/ruby/lib/ruby/1.8/date.rb:1576:in `new_by_frags'
+  c:/ruby/lib/ruby/1.8/date.rb:1601:in `strptime'
+  app/models/sample.rb:30:in `assign_collected_YMD'
+  app/controllers/samples_controller.rb:86:in `create'
+  app/controllers/samples_controller.rb:85:in `create'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-14 20:33:27) [GET]
+Rendering account/login
+Completed in 391ms (View: 391, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-14 20:33:30) [GET]
+Rendering account/signup
+Completed in 125ms (View: 31, DB: 94) | 200 OK [http://localhost/account/signup]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-14 20:33:48) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"HvoVRdlOLlynZynQ8USSZ+5ggI5R9lJLCpYccPK4ZbQ=", "user"=>{"password_confirmation"=>"1111", "email"=>"james@burrett.org", "login"=>"1111", "password"=>"1111", "name"=>"1111"}}
+Rendering account/signup
+Completed in 562ms (View: 0, DB: 0) | 200 OK [http://localhost/account/signup]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-14 20:34:06) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"HvoVRdlOLlynZynQ8USSZ+5ggI5R9lJLCpYccPK4ZbQ=", "user"=>{"password_confirmation"=>"1111", "email"=>"drburrett@gmail.com", "login"=>"1111", "password"=>"1111", "name"=>"1111"}}
+Sent mail to drburrett@gmail.com
+Redirected to http://localhost:3005/account
+Completed in 1047ms (DB: 47) | 302 Found [http://localhost/account/signup]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2012-05-14 20:34:07) [GET]
+Rendering account/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/account]
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-05-14 20:34:13) [GET]
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/menu]
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-05-14 20:39:59) [GET]
+Redirected to http://localhost:3005/account/login
+Completed in 31ms (DB: 16) | 302 Found [http://localhost/account/logout]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-14 20:39:59) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-15 13:05:16) [GET]
+Rendering account/login
+Completed in 312ms (View: 312, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 13:06:36) [GET]
+Rendering account/signup
+Completed in 125ms (View: 16, DB: 94) | 200 OK [http://localhost/account/signup]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 13:07:05) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"+UCDQWj+6vR1Snvi+B2Itgxtmk4pbJqiBE6J+vX2FzU=", "user"=>{"password"=>"3333", "name"=>"3333", "login"=>"3333", "password_confirmation"=>"3333", "email"=>"3333@burrett.log"}}
+Sent mail to 3333@burrett.log
+Redirected to http://localhost:3005/account
+Completed in 1844ms (DB: 16) | 302 Found [http://localhost/account/signup]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2012-05-15 13:07:07) [GET]
+Rendering account/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/account]
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-05-15 16:42:46) [GET]
+Redirected to http://localhost:3005/account/login
+Completed in 78ms (DB: 78) | 302 Found [http://localhost/account/logout]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-05-15 16:42:46) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 16:42:48) [GET]
+Rendering account/signup
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/signup]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 16:42:56) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"5555", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"5555@"}}
+Sent mail to 5555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:28:03) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"5555", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"5555@"}}
+Sent mail to 5555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:28:29) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"5555", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"555555@"}}
+Sent mail to 555555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:29:37) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"5555", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"dddd"}}
+Sent mail to dddd
+
+Net::SMTPSyntaxError (501 <dddd>: recipient address must contain a domain
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:29:49) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"5555", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"dddd@"}}
+Sent mail to dddd@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:30:11) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"1", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"dddd@"}}
+Sent mail to dddd@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:30:20) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"1", "login"=>"5555", "password_confirmation"=>"5555", "email"=>""}}
+Rendering account/signup
+Completed in 188ms (View: 31, DB: 125) | 200 OK [http://localhost/account/signup]
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 19:36:03) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"1", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"5555@"}}
+Sent mail to 5555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 20:14:49) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"1", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"5555@"}}
+Sent mail to 5555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 20:25:01) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"1", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"5555@"}}
+Sent mail to 5555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-05-15 20:27:59) [POST]
+  Parameters: {"commit"=>"Create New Login", "authenticity_token"=>"iWcSgy7Qj1j+L66dCSGCpBSh7JeZ1lbQuvHxDq2Sg84=", "user"=>{"password"=>"5555", "name"=>"1", "login"=>"5555", "password_confirmation"=>"5555", "email"=>"5555@"}}
+Sent mail to 5555@
+
+Net::SMTPSyntaxError (501 <>: missing or malformed local part
+):
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:942:in `check_response'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:911:in `getok'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:854:in `rcptto'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:835:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `each'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:833:in `rcptto_list'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:654:in `sendmail'
+  c:/ruby/lib/ruby/1.8/net/smtp.rb:526:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-06-08 11:32:58) [GET]
+Rendering account/login
+Completed in 875ms (View: 875, DB: 0) | 200 OK [http://localhost/account/login]

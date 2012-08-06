@@ -18,11 +18,10 @@
 		<tr><td  colspan=2><%= link_to 'Home', samples_path %></td></tr>
 
 <%= error_messages_for :user %>
+
 <tr><td colspan=2>Welcome to the Right Whale Registration<br>
-After you have registered below, the project owner needs to give you permission to work on their project.  <br>
-Until that happens, you'll be redirected to this page.<br>
 Please Note: 4 characters is the minimum size for login name and password  <br>
-Please contact us directly if registration is urgent.</td><td></td></tr>
+For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</td><td>
 
 <% form_for :user do |f| -%>
 				<tr height = 50><td width=150><label for="Your Real Name">Your Real Name</label><td><%= f.text_field :name %></td></tr>

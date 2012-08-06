@@ -6,6 +6,7 @@ class Sample < ActiveRecord::Base
   belongs_to :extraction_method
   belongs_to :storage_medium
   belongs_to :user
+  belongs_to :organization
   
   has_many :y_chromosome_seqs
   has_many :y_chromosomes
@@ -17,8 +18,22 @@ class Sample < ActiveRecord::Base
   has_many :mhc_seqs
   has_many :genders
   has_many :dna_results
+  
   accepts_nested_attributes_for :genders
   accepts_nested_attributes_for :dna_results
   accepts_nested_attributes_for :mt_dnas
+  
+  before_save :assign_collected_YMD
+
+
+  def assign_collected_YMD
+
+    if self.collected_on_day.blank? or self.collected_on_month.blank? or self.collected_on_year.blank?
+      self.date_collected = nil
+    else
+      self.date_collected = DateTime.strptime(self.collected_on_year + "/" + self.collected_on_month + "/" + self.collected_on_day, "%Y/%m/%d" )
+    end
+  end
+
   
 end

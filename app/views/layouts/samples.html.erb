@@ -1,11 +1,22 @@
+<%
+CalendarDateSelect.format = (params[:fmt]||"iso_date").to_sym
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Samples: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag "basic" %>
+  	<%= javascript_include_tag :defaults, "prototype.js" %>
+  	<%= calendar_date_select_includes params[:style]%>
+	<% if ENV['RAILS_SITE'] == 'TRACKER' %>
+  		<%= stylesheet_link_tag "basic" %>
+	<%else%>
+		<%= stylesheet_link_tag "basic" %>
+	<%end%>	
 </head>
 <body>
 

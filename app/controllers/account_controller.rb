@@ -6,7 +6,7 @@ class AccountController < ApplicationController
 
   skip_before_filter :login_required, :except => :register_to_project
   skip_before_filter :set_current_project
-  
+
   def authorized?
     current_user ? true : false
   end
@@ -28,31 +28,12 @@ class AccountController < ApplicationController
       end
       
       flash[:notice] = "Logged in successfully"
-
-      # Send the user to an explanation page 
-      # if they're in limbo, waiting to be 
-      # assigned to a project.
-#      if !current_user.has_access_to_active_projects?
-#          if current_user.is_project_manager?
-#          if current_user.data_entry_only?
-#            flash[:notice] = "data entry only"
-              
-#              self.current_project = self.current_user.project_id
-current_project = 1
-              redirect_back_or_default(:controller => '/samples', :action => 'menu')
-#          else
-#              redirect_to(:action => 'unassigned_user')
-#          end
-#      else
-#        self.current_project = self.current_user.project_id
-#         self.current_project = 1
-#        redirect_back_or_default(:controller => '/samples')
-#      end
-      
+      current_project = 1
+      redirect_to :controller => '/samples', :action => 'menu' , :notice => "Logged in successfully"
     else
       flash[:notice] = "Incorrect login, please try again."
+#      redirect_to(:action => 'index',:flash => { :notice => "Log in failed"})
     end
-  
   end
 
   def signup
@@ -61,14 +42,18 @@ current_project = 1
     @user.project_id = 1
     @user.data_entry_only = true
     @user.save!
-    flash[:notice] = "Thanks for signing up!"
-    self.current_user = nil
-    redirect_to(:controller => '/account', :action => 'logout')
+    self.current_user = @user
+#    self.current_user = nil
+    redirect_back_or_default(:controller => '/account', :action => 'index')
+      flash[:notice] = "Thanks for signing up!"
+#    redirect_to(:controller => '/account', :action => 'login')
+#    redirect_to(:controller => '/account', :action => 'logout')
 #    redirect_back_or_default(:controller => '/account', :action => 'index')
-  rescue ActiveRecord::RecordInvalid
-    render :action => 'signup'
+    rescue ActiveRecord::RecordInvalid
+      flash[:error]
+      render :action => 'signup'
   end
-  
+
   def logout
     self.current_user.forget_me if logged_in?
     cookies.delete :auth_token

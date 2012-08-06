@@ -1,6 +1,64 @@
-body {
-  background-image: URL("/images/striped_gray_bg.gif")
+table, td, th
+{
+border-collapse:collapse;	
+border:0px solid black;
+text-align:center;
+background-color:red;
 }
+th
+{
+background-color:#d2dbec;
+color:black;
+}
+td
+{
+vertical-align:middle;
+}
+
+#divBigDropDown
+		{
+			width:200px;
+		}
+			
+#divBigPics
+        {
+            width: 350px;
+        }
+.style3 {color: #373d46; font-size: 18px; }
+.style4 {font-size: 24px}
+.style5 {font-size: 16px}
+.style8 {color: #373d46; font-size: 16px; }
+
+
+a:link {
+	color: #0066CC;
+	font-weight: bold;
+	text-decoration: underline;
+}
+a:visited {
+	text-decoration: none;
+	color: #0066CC;
+	text-decoration: underline;
+}
+a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a:active {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.body2 A:link {color: #0066CC; text-decoration: underline overline}
+.body2 A:visited {color: #FFFFFF; text-decoration: underline overline}
+td
+{
+text-align:center;
+}
+
 
 body, td, th {
   font-family: Verdana,sans-serif;
@@ -10,10 +68,6 @@ body, td, th {
 td { vertical-align:top}
 h3 { font-size: 14px;}
 
-a:link, a:visited {
-  color: #0066CC;
-}
-
 #page {
   background-color:#fff;
   padding: 10px 20px;
@@ -22,9 +76,10 @@ a:link, a:visited {
   margin-top: 20px;
 }
 
-#header { 
-/*      background-color: #009900;   */
-     background-color: #A8BE7D;
+#header {
+/*  background-color: #962332;  */
+/* force this to update */
+  background-color: #009933
 }
 
 #header h2{
@@ -162,3 +217,16 @@ div.header_tooltip {
 tr.record td.actions {
   border-right:none ! important;
 }
+
+div.project_checkbox {
+  width: 220px;
+  overflow: hidden;
+  height: 19px;
+  float: left;
+}
+
+#project_selectors_toggle {
+  height: 20px;
+}
+ 
+ 

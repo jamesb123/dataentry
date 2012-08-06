@@ -26,20 +26,29 @@ class User < ActiveRecord::Base
   has_many :samples
   before_save :set_project, :check_for_duplicate_admins
 
+  after_create :send_welcome_mail
+  def send_welcome_mail
+#     Emailer.contact(self.email, "test", self.name).deliver
+     Emailer.deliver_contact(self.email, "DNA Account Confirmation", self.name, self.login, self.password) 
+#     Emailer.deliver_contact("james@burrett.com", "subject from user", "name")
+  end
+  
   # Virtual attribute for the unencrypted password
   attr_accessor :password
-
-  validates_presence_of     :login, :email
+  validates_presence_of     :login, :email, :name, :password
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
   validates_length_of       :password, :within => 4..40, :if => :password_required?
   validates_confirmation_of :password,                   :if => :password_required?
-  validates_length_of       :login,    :within => 3..40
-  validates_length_of       :email,    :within => 3..100
+  validates_length_of       :login,    :within => 4..40
+  validates_length_of       :email,    :within => 4..100
   validates_uniqueness_of   :login, :email, :case_sensitive => false
   before_save :encrypt_password
 
-#  include SecuritySets::AdminOnly
+  include SecuritySets::AdminOnly
+  def to_label
+    "#{login}"
+  end
   
   def to_s
     "#{name}"

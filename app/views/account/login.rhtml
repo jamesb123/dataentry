@@ -30,12 +30,14 @@ color:black;
 			<tr><%= error_messages_for :user %></tr>
 <tr><td  colheight=50% colspan=2>Welcome to the NRDPFC Right Whale Sample Submission/Tracking website.<br>
 Please logon in using the following boxes.<br>
-If you do not have a login yet, please click on "Create New Login" link below.</td></tr><tr>
+If you do not have a login yet, please click on "Create New Login" link below.<br>
+<b>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</b></td></tr><tr>
+
 			<% form_tag do -%>
 				<tr><td  width = "20%" height = "30" ><label for="login">Login</label><td><%= text_field_tag 'login' %></td></tr>
 				<tr height = 50><td width=150><label for="password">Password</label></td><td><%= password_field_tag 'password' %></td></tr>
 				<tr height = 50><td colspan=2><%= submit_tag 'Log in' %></td><td></td></tr>
-				<tr><td width = 300 colspan=2><%= link_to "Create New Login", :controller => "/account", :action => "signup" %></td></tr>
+ 				<tr><td width = 300 colspan=2><%= link_to "Create New Login", :controller => "/account", :action => "signup" %></td></tr>
 			<% end -%>
             </tr>
           </table>

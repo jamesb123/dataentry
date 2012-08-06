@@ -14,6 +14,11 @@ td
 vertical-align:middle;
 }
 
+#divBigDropDown
+		{
+			width:200px;
+		}
+			
 #divBigPics
         {
             width: 350px;

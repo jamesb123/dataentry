@@ -14,8 +14,11 @@ class SamplesController < ApplicationController
   # GET /samples
   # GET /samples.xml
   def index
-    @sample = Sample.find(:all, :order => 'date_submitted', :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = 1 and approved = false and user_id = '#{current_user.id}'")
-#    @samples = Sample.all
+    if current_user.login == "admin"
+      @sample = Sample.find(:all, :order => 'date_submitted' , :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = 1 and remote_data_entry = true")
+    else
+      @sample = Sample.find(:all, :order => 'date_submitted' , :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = 1 and remote_data_entry = true and user_id = '#{current_user.id}'")
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,14 +30,10 @@ class SamplesController < ApplicationController
   # GET /samples/1.xml
   # show for current user only
   def show
-#    @sample = Sample.find(params[:id])
     @sample = Sample.find(params[:id],:include => [:genders, :dna_results, :mt_dnas])
     @sfw = 100
-#    debugger
+    @org = Organization.find_by_id(@sample.organization_id)
 
-#    @sample = Sample.find(:all, :include => [:genders], :conditions => "samples.project_id = 1 and samples.approved = false and user_id = '#{current_user.id}'")
-#    @samples = Sample.find(:all, :conditions => "samples.project_id = 1 and samples.approved = false and user_id = '#{current_user.id}'")
-#    @sample = Sample.find(:all)    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @sample }
@@ -43,16 +42,14 @@ class SamplesController < ApplicationController
   
   # GET /samples/1
   # GET /samples/1.xml
-  def tracker
-#    puts 'tracker in controller'
-    @sample = Sample.find(:all, :include => [:genders, :dna_results, :mt_dnas ], :conditions => "project_id = 1 and approved = false and user_id = '#{current_user.id}'")
+#  def tracker
+#    @sample = Sample.find(:all, :include => [:genders, :dna_results, :mt_dnas ], :conditions => "project_id = 1 and approved = false and user_id = '#{current_user.id}'")
 #    @samples = Sample.find(:all, :conditions => "project_id = 1 and approved = false and user_id = '#{current_user.id}' " )
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @sample }
-
-    end
-  end
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.xml  { render :xml => @sample }
+#    end
+#  end
 
 
   # GET /samples/new
@@ -64,7 +61,8 @@ class SamplesController < ApplicationController
     @sample.date_submitted = Date.today
     @sample.project_id = 1
     @sample.approved = false
-    
+    @sample.remote_data_entry = true
+    @sample.import_permit = "CA027"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @sample }
@@ -80,7 +78,6 @@ class SamplesController < ApplicationController
   # POST /samples.xml
   def create
     @sample = Sample.new(params[:sample])
-
     respond_to do |format|
       if @sample.save
         flash[:notice] = 'Sample was successfully created.'
@@ -97,7 +94,6 @@ class SamplesController < ApplicationController
   # PUT /samples/1.xml
   def update
     @sample = Sample.find(params[:id])
-
     respond_to do |format|
       if @sample.update_attributes(params[:sample])
         flash[:notice] = 'Sample was successfully updated.'

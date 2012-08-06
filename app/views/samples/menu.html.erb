@@ -1,5 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  </head>
 <html>
-
 <style type="text/css">
 table, td, th
 {
@@ -27,14 +33,15 @@ color:black;
           </tr>
         </table>
 
-          <table width="500" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
+          <table width="600" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
     			<tr><td colspan=2><h2>Menu for Right Whale Samples</h2></td></tr>
+	            <tr><td colspan=3><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
 				<tr><td colspan=2> Logged in as: <%= current_user.name%></td><td></td></tr>
-				<tr><td width=30% ><%= link_to 'Create Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
-				<tr><td><%= link_to 'Edit and Track ', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
+				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
 				<tr><td><%= error_messages_for :user %></td></tr>
-	           </tr>
+			   </tr>
           </table>
           <p align="left">&nbsp;</p>
           <p align="left">&nbsp;</p>

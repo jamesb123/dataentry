@@ -1,60 +1,198 @@
 <html>
-	<%= stylesheet_link_tag "basic" %>
+<%= stylesheet_link_tag "basic" %>
 
+<style type="text/css">
+
+td.empty{color:red;font-weight:bold;}
+td.nempty{color:green;font-weight:bold;}
+
+table, td, th
+td
+
+
+{
+text-align:left;
+vertical-align:middle;
+}
+</style>
+
+<title>Tracking</title>
 <table width="1024" border="0">
   <tr>
-    <td width="900" height="450" bgcolor="#D2DBEC">
-	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+    <td width="900" height="600" bgcolor="#D2DBEC">
+	<table width="900" height="600" border="0" align="center" bordercolor="#ABBCD8">
 	  <tr>
-		<td width="900" height="600" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
+		<td width="900" height=900" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
           <tr>
             <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
               </th>
           </tr>
         </table>
 
+
+<div align="center">
+
+<% if ENV['RAILS_SITE'] == 'TRACKER' %>
+	<h3 style=background-color:yellow><%= link_to 'DEMO Home', menu_path %></h3>
+<%else%>
 	<h3><%= link_to 'Home', menu_path %></h3>
-	<h3>Right Whale Sample Data Submitted <%= nice_date_display(@sample.date_submitted) %> by <%= current_user.to_s %></h3>
+<%end%>	
 
-	<table width="300" height="100" border="1px" align="center" cellspacing="2" cellpadding = "2">
+<h2>Right Whale Sample <%=@sample.id %> Submitted <%= nice_date_display(@sample.date_submitted) %> by <%= current_user.to_s %></h2>
+<font color="green">Green Indicates Complete</font>
+<font color="red">Red Indicates Incomplete</font><p></p>
+	<table width="400" height="550" border="1px" cellspacing="2" cellpadding = "3">
 		<tr><th>Name</th><th>Value</th></tr>
-	  	<tr><td width=200 >Field Code</td><td width=200 ><%= @sample.field_code %></td></tr>
-		<tr><td>Submitted Date</td><td ><%= nice_date_display(@sample.date_submitted) %></td></tr>
-		<tr><td>Received Date</td><td ><%= nice_date_display(@sample.date_received) %></td></tr>
-		<tr><td>Extraction Date</td><td><%= @sample.extraction_date %></td>
-		<tr><td>Shipping Date</td><td><%= @sample.shipping_date %></td>
-		<tr><td>Export Permit</td></td><td><%= @sample.export_permit %></td>
 
-	<% @sample.genders.each do |g| %>
-		<tr><td>Gender</td><td>  <%= g.gender %> </td></tr>
-		<tr><td>Sexing Date</td><td>  <%= nice_date_display(g.date_genotyped) %> </td></tr>
-	<% end %>		
-	<% @sample.dna_results.each do |d| %>
-		<tr><td>Extraction Date</td><td>  <%= d.extraction_date %> </td></tr>
-	<% end %>		
-	<% @sample.mt_dnas.each do |m| %>
-		<tr><td>Haplotype</td><td>  <%= m.haplotype %> </td></tr>
-		<tr><td>Date Sequenced</td><td>  <%= m.date_sequenced %> </td></tr>
-	<% end %>		
+		<%if @sample.date_submitted.blank?%>
+			<tr><td class="empty">Submitted Date</td><td align=left><%= nice_date_display(@sample.date_submitted) %></td></tr>
+		<%else%>
+			<tr><td class="nempty">Submitted Date</td><td align=left><%= nice_date_display(@sample.date_submitted) %></td></tr>
+		<%end%>
 
-<!---- keep this for later 
-<% form_for(@sample) do |f| %>
-	<%= f.error_messages %>
+	  	<%if @sample.field_code.blank?%>
+			<tr><td class="empty" width=35%>Field Code</td><td width=65% ><%= @sample.field_code %></td></tr>
+		<%else%>
+			<tr><td class="nempty"width=35%>Field Code</td><td width=65% ><%= @sample.field_code %></td></tr>
+		<%end%>
 
-	<% f.fields_for :genders do |gender_fields| %>
-		<tr><td>Gender</td><td> <%= gender_fields.text_field :gender %></td>
-		<tr><td>Sexing Date</td><td><%= gender_fields.text_field :date_genotyped %></td>
-	<%end%> 
+	  	<%if @sample.organism_index.blank?%>
+			<tr><td class="empty" width=35%>Necropsy Sample Number</td><td width=65% ><%= @sample.organism_index %></td></tr>
+		<%else%>
+			<tr><td class="nempty"width=35%>Necropsy Sample Number</td><td width=65% ><%= @sample.organism_index %></td></tr>
+		<%end%>
 
-	<% f.fields_for :dna_results do |dna_fields| %>
-		<tr><td>Extraction Date</td><td><%= dna_fields.text_field :extraction_date %></td>
-	<%end%> 
-	
-	<% f.fields_for :mt_dnas do |mt_dna_fields| %>
-		<tr><td>Haplotype</td><td><%= mt_dna_fields.text_field :haplotype %></td>
-		<tr><td>Haplotype Date</td><td><%= mt_dna_fields.text_field :date_sequenced %></td>
-	<%end%> 
+		<%if @sample.sample_bc.blank?%>
+			<tr><td class="empty">Sample Barcode</td></td><td><%= @sample.sample_bc %></td>
+		<%else%>
+			<tr><td class="nempty">Sample Barcode</td></td><td><%= @sample.sample_bc %></td>
+		<%end%>
 
-<%end%>
----->
+		<%if @sample.photo_id.blank?%>
+			<tr><td class="empty">Sighting ID</td></td><td><%= @sample.photo_id %></td>
+		<%else%>
+			<tr><td class="nempty">Sighting ID</td></td><td><%= @sample.photo_id %></td>
+		<%end%>
+
+		<%if @sample.field_ident.blank?%>
+			<tr><td class="empty">Field Identification</td></td><td><%= @sample.field_ident %></td>
+		<%else%>
+			<tr><td class="nempty">Field Identification</td></td><td><%= @sample.field_ident %></td>
+		<%end%>
+
+	  	<%if @sample.date_collected.blank?%>
+			<tr><td class="empty" width=35%>Date Collected</td><td width=65% ><%= nice_date_display(@sample.date_collected) %></td></tr>
+		<%else%>
+			<tr><td class="nempty"width=35%>Date Collected</td><td width=65% ><%= nice_date_display(@sample.date_collected) %></td></tr>
+		<%end%>
+
+	  	<%if @sample.organization_id.nil?%>
+			<tr><td class="empty" width=35%>Organization</td><td width=65% ><%= '' %></td></tr>
+		<%else%>
+			<tr><td class="nempty"width=35%>Organization</td><td width=65% ><%= @org.org_name %></td></tr>
+		<%end%>
+
+	  	<%if @sample.text_tissue_type.blank?%>
+			<tr><td class="empty" width=35%>Tissue Type</td><td width=65% ><%= '' %></td></tr>
+		<%else%>
+			<tr><td class="nempty"width=35%>Tissue Type</td><td width=65% ><%= @sample.text_tissue_type %></td></tr>
+		<%end%>
+
+		<%if @sample.shipping_date.blank?%>
+			<tr><td class="empty">Shipping Date</td><td align=left ><%= nice_date_display(@sample.shipping_date) %></td></tr>
+		<%else%>
+			<tr><td class="nempty">Shipping Date</td><td align=left ><%= nice_date_display(@sample.shipping_date) %></td></tr>
+		<%end%>
+
+		<%if @sample.export_permit.blank?%>
+			<tr><td class="empty">Export Permit</td></td><td><%= @sample.export_permit %></td>
+		<%else%>
+			<tr><td class="nempty">Export Permit</td></td><td><%= @sample.export_permit %></td>
+		<%end%>
+
+		<%if @sample.import_permit.blank?%>
+			<tr><td class="empty">Import Permit</td></td><td><%= @sample.import_permit %></td>
+		<%else%>
+			<tr><td class="nempty">Import Permit</td></td><td><%= @sample.import_permit %></td>
+		<%end%>
+
+		<%if @sample.date_received.blank?%>
+			<tr><td class="empty">Received Date</td><td ><%= nice_date_display(@sample.date_received) %></td></tr>
+		<%else%>
+			<tr><td class="nempty">Received Date</td><td ><%= nice_date_display(@sample.date_received) %></td></tr>
+		<%end%>
+
+		<%if @sample.dna_results.blank? %>
+				<tr><td class="empty" >Extraction Date</td><td></td></tr>
+		<%else%>
+			<% @sample.dna_results.each do |d| %>
+				<%if d.extraction_date.blank? %>
+					<tr><td class="empty" >Extraction Date</td><td></td></tr>
+				<%else%>
+					<tr><td class="nempty">Extraction Date</td><td>  <%= nice_date_display(d.extraction_date) %> </td></tr>
+				<%end%>
+			<% end %>		
+		<%end%>
+		
+		<%if @sample.mt_dnas.blank? %>
+				<tr><td class="empty">Date Sequenced</td><td></td></tr>
+				<tr><td class="empty">Haplotype</td><td></td></tr>
+		<%else%>
+			<% @sample.mt_dnas.each do |m| %>
+			<%if m.date_sequenced.blank? %>
+				<tr><td class="empty">Date Sequenced</td><td></td></tr>
+			<%else%>	
+				<tr><td class="nempty">Date Sequenced</td><td><%= nice_date_display(m.date_sequenced) %> </td></tr>
+			<%end%>
+			<%if m.haplotype.blank? %>
+				<tr><td class="empty">Haplotype</td><td></td></tr>
+			<%else%>
+				<tr><td class=nempty>Haplotype</td><td>  <%= m.haplotype %> </td></tr>
+			<%end%>
+			<%end%>
+		<%end%>
+		
+		<%if @sample.genders.blank? %>
+				<tr><td class="empty">Sexing Date</td><td></td></tr>
+				<tr><td class="empty">Gender</td><td></td></tr>
+		<%else%>
+			<% @sample.genders.each do |g| %>
+				<%if g.date_genotyped.blank? %>
+					<tr><td class="empty">Sexing Date</td><td></td></tr>
+				<%else%>		
+					<tr><td class="nempty">Sexing Date</td><td>  <%= nice_date_display(g.date_genotyped) %> </td></tr>
+				<%end%>
+				<%if g.gender.blank? %>
+					<tr><td class="empty">Gender</td><td></td></tr>
+				<%else%>
+					<tr><td class="nempty">Gender</td><td><%= g.gender %></td></tr>
+				<%end%>
+			<%end%>
+		<%end%>
+
+		<%if @sample.current_location.blank?%>
+			<tr><td class="empty">Current Location</td></td><td><%= @sample.current_location %></td>
+		<%else%>
+			<tr><td class="nempty">Current Location</td></td><td><%= @sample.current_location %></td>
+		<%end%>
+
+		<%if @sample.comments.blank?%>
+			<tr><td class="empty">Comments</td></td><td><%= @sample.comments %></td>
+		<%else%>
+			<tr><td class="nempty">Comments</td></td><td><%= @sample.comments %></td>
+		<%end%>
+
+	  	<%if @sample.profiling_date.blank?%>
+			<tr><td class="empty">Profiling Date</td></td><td><%= nice_date_display(@sample.profiling_date) %></td>
+		<%else%>
+			<tr><td class="nempty">Profiling Date</td></td><td><%= nice_date_display(@sample.profiling_date) %></td>
+		<%end%>
+	  	
+		<%if @sample.profiling_completed.blank?%>
+			<tr><td class="empty">Profiling Completed</td></td><td><%= @sample.profiling_completed.yesno %></td>
+		<%else%>
+			<tr><td class="nempty">Profiling Completed</td></td><td><%= @sample.profiling_completed.yesno %></td>
+		<%end%>
+</div>
+
 </table>
