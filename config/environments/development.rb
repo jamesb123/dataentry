@@ -26,5 +26,5 @@ config.action_mailer.raise_delivery_errors = true
 #  :authentication => :login,
 #  :content_type   => "text/html",
 #  :user_name      => 'drburrett@gmail.com',
-#  :password       => 'bagend2683'
+#  :password       => ''
 #}

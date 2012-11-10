@@ -68,14 +68,14 @@ Rails::Initializer.run do |config|
  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp 
   config.action_mailer.default_content_type = "text/html" 
-  config.action_mailer.default_url_options = { :host => "nrdpfcbackup.info" } 
+  config.action_mailer.default_url_options = { :host => "burrett.org" } 
   config.action_mailer.smtp_settings = { 
     :tls              => false, 
-    :address          => "nrdpfcbackup.info", 
+    :address          => "burrett.org", 
     :port             => 26, 
-   :domain           => "nrdpfcbackup.info", 
-    :authentication   => :plain,
-    :user_name        => "dna@nrdpfcbackup.info", 
+    :domain           => "burrett.org", 
+    :authentication   => :login,
+    :user_name        => "nrdpfc@burrett.org", 
     :password         => "nrdpfc12" 
   } 
   

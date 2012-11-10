@@ -37983,3 +37983,1052 @@ Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
 Processing AccountController#login (for 127.0.0.1 at 2012-07-20 20:24:48) [GET]
 Rendering account/login
 Completed in 94ms (View: 78, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-08-12 15:11:54) [GET]
+Rendering account/login
+Completed in 94ms (View: 94, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-08-12 15:12:03) [POST]
+  Parameters: {"login"=>"tester", "commit"=>"Log in", "password"=>"nrdpfc"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 734ms (DB: 0) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-08-12 15:12:04) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 297ms (View: 234, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2012-08-12 15:12:12) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (46.9ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 1 and remote_data_entry = true and user_id = '68') ORDER BY date_submitted[0m
+  [4;35;1mSample Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (15.6ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+  [4;35;1mDnaResult Load (31.2ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+  [4;36;1mMtDna Load (31.2ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 547ms (View: 172, DB: 125) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#edit (for 127.0.0.1 at 2012-08-12 15:12:25) [GET]
+  Parameters: {"id"=>"179997"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (0.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 179997) [0m
+Rendering template within layouts/samples
+Rendering samples/edit
+  [4;36;1mOrganization Load (0.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+Completed in 469ms (View: 266, DB: 0) | 200 OK [http://localhost/samples/179997/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#update (for 127.0.0.1 at 2012-08-12 15:12:47) [PUT]
+  Parameters: {"sample"=>{"collected_on_month"=>"12", "import_permit"=>"CA027", "text_tissue_type"=>"", "sample_bc"=>"", "field_code"=>"ÉéÈ;¨Ç", "comments"=>"", "current_location"=>"", "field_ident"=>"", "organization_id"=>"", "date_submitted"=>"2012-06-19", "collected_on_year"=>"2015", "submitted_by"=>"Thomas Tester", "photo_id"=>"", "export_permit"=>"", "organism_index"=>"", "collected_on_day"=>"18", "shipping_date"=>""}, "commit"=>"Update", "id"=>"179997"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (0.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 179997) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Update (0.0ms)[0m   [0;1mUPDATE `samples` SET `field_code` = 'ÉéÈ;¨Ç' WHERE `id` = 179997[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3015/samples/179997
+Completed in 125ms (DB: 0) | 302 Found [http://localhost/samples/179997]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2012-08-12 15:12:47) [GET]
+  Parameters: {"id"=>"179997"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (15.6ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 179997) [0m
+  [4;35;1mGender Load (15.6ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 179997) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 179997) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 179997) [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 547ms (View: 250, DB: 47) | 200 OK [http://localhost/samples/179997]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-08-12 15:12:51) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 156ms (View: 31, DB: 0) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2012-08-12 15:12:53) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (15.6ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 1 and remote_data_entry = true and user_id = '68') ORDER BY date_submitted[0m
+  [4;35;1mSample Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (0.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+  [4;35;1mDnaResult Load (0.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+  [4;36;1mMtDna Load (0.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 344ms (View: 47, DB: 31) | 200 OK [http://localhost/samples]
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-09 18:55:34) [GET]
+Rendering account/login
+Completed in 78ms (View: 78, DB: 16) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-09 19:04:59) [POST]
+  Parameters: {"password"=>"nrdpfc", "commit"=>"Log in", "login"=>"tester"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (62.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 828ms (DB: 62) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-09 19:05:00) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 422ms (View: 297, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-09 19:05:36) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (46.9ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 359ms (View: 156, DB: 47) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-09 19:05:46) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3015/account/login
+Completed in 78ms (DB: 0) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-09 19:05:47) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-09 19:05:49) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering account/signup
+Completed in 156ms (View: 47, DB: 16) | 200 OK [http://localhost/account/signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-09 19:06:03) [POST]
+  Parameters: {"user"=>{"email"=>"sales@burrett.org", "password_confirmation"=>"123123", "password"=>"123123123123", "name"=>"123123", "login"=>"123123"}, "commit"=>"Create New Login"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (46.9ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '123123') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sales@burrett.org') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+Rendering account/signup
+Completed in 734ms (View: 47, DB: 62) | 200 OK [http://localhost/account/signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-09 19:06:24) [POST]
+  Parameters: {"user"=>{"email"=>"info@burrett.org", "password_confirmation"=>"123123", "password"=>"123123", "name"=>"123123", "login"=>"123123"}, "commit"=>"Create New Login"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '123123') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'info@burrett.org') LIMIT 1[0m
+  [4;36;1mUser Create (15.6ms)[0m   [0;1mINSERT INTO `users` (`crypted_password`, `salt`, `email`, `remember_token_expires_at`, `is_admin`, `data_entry_only`, `name`, `updated_at`, `project_id`, `login`, `created_at`, `remember_token`) VALUES('3c78c537ad4c617692b3d9e78671bb2e8738e27e', '449297226ee665737e693e53b3684260f702617f', 'info@burrett.org', NULL, 0, 1, '123123', '2012-11-10 00:06:24', 1, '123123', '2012-11-10 00:06:24', NULL)[0m
+Sent mail to info@burrett.org
+
+Date: Fri, 9 Nov 2012 19:06:24 -0500
+From: info@nrdpfc.ca
+To: info@burrett.org
+Subject: DNA Account Confirmation
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+This email confirms your account creation for the Right Whale DNA Analysis System<br>
+Please keep this information in a safe place<br>
+Real Name: 123123<br>
+Your email:  info@burrett.org <br>
+Login: 123123<br>
+Password: 123123
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3015/account
+Completed in 1953ms (DB: 16) | 302 Found [http://localhost/account/signup]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#index (for 127.0.0.1 at 2012-11-09 19:06:26) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 88) LIMIT 1[0m
+Rendering account/index
+Completed in 188ms (View: 125, DB: 0) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2012-11-09 19:06:36) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 88) LIMIT 1[0m
+  [4;36;1mSample Load (187.5ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 1 and remote_data_entry = true and user_id = '88') ORDER BY date_submitted[0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 359ms (View: 47, DB: 188) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-09 19:06:38) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 88) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 78ms (View: 31, DB: 0) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-09 19:06:42) [GET]
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 88) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3015/account/login
+Completed in 203ms (DB: 16) | 302 Found [http://localhost/account/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-09 19:06:43) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:17:06) [GET]
+Rendering account/login
+Completed in 62ms (View: 62, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:17:44) [POST]
+  Parameters: {"password"=>"nrdpfc", "commit"=>"Log in", "login"=>"tester"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 266ms (DB: 0) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:17:44) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 156ms (View: 109, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:19:02) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:19:46) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 219ms (View: 31, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:24:24) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 109ms (View: 31, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:25:20) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 188ms (View: 31, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:26:13) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 172ms (View: 125, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:27:45) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:28:51) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 266ms (View: 125, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:29:23) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 109ms (View: 31, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:29:39) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 47, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 07:29:46) [GET]
+
+ActionController::RoutingError (No route matches "/Importing%20and%20Exporting%20Samples.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (15.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:30:11) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 328ms (View: 125, DB: 31) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 07:30:15) [GET]
+
+ActionController::RoutingError (No route matches "/public/Importing%20and%20Exporting%20Samples.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 07:30:34) [GET]
+
+ActionController::RoutingError (No route matches "/public/Importing%20and%20Exporting%20Samples.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:30:43) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (31.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 375ms (View: 156, DB: 31) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 07:30:47) [GET]
+
+ActionController::RoutingError (No route matches "/public/Importing%20and%20Exporting%20Samples.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 07:32:46) [GET]
+
+ActionController::RoutingError (No route matches "/public/Importing%20and%20Exporting%20Samples.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:32:52) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 172ms (View: 31, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:37:47) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 31) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-10 07:39:06) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3015/account/login
+Completed in 78ms (DB: 16) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:39:06) [GET]
+Rendering account/login
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:40:37) [GET]
+Rendering account/login
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:41:19) [GET]
+Rendering account/login
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 07:42:26) [GET]
+
+ActionController::RoutingError (No route matches "/account/importexport.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:42:50) [POST]
+  Parameters: {"password"=>"nrdpfc", "commit"=>"Log in", "login"=>"tester"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:42:50) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 47, DB: 0) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:53:52) [GET]
+Rendering account/login
+Completed in 62ms (View: 47, DB: 16) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 07:53:54) [POST]
+  Parameters: {"password"=>"nrdpfc", "commit"=>"Log in", "login"=>"tester"}
+  [4;36;1mUser Columns (93.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 609ms (DB: 109) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 07:53:55) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 141ms (View: 62, DB: 31) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 07:53:59) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (62.5ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 688ms (View: 438, DB: 94) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2012-11-10 07:54:04) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (31.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (171.9ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 1 and remote_data_entry = true and user_id = '68') ORDER BY date_submitted[0m
+  [4;35;1mSample Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (78.1ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+  [4;35;1mDnaResult Load (62.5ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+  [4;36;1mMtDna Load (46.9ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (179992,179916,179993,179994,179997,179915)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 797ms (View: 62, DB: 406) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 07:54:13) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 281ms (View: 156, DB: 16) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 07:54:47) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+ERROR: compiling _run_erb_app47views47samples47new46html46erb RAISED compile error
+C:/source/rails/DataEntry/app/views/samples/new.html.erb:79: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n</...
+      ^
+C:/source/rails/DataEntry/app/views/samples/new.html.erb:84: syntax error, unexpected kENSURE, expecting ')'
+C:/source/rails/DataEntry/app/views/samples/new.html.erb:86: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47samples47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<head>\n<style type=\"text/css\">\ntable, td, th\ntd\n{\nvertical-align:middle;\ntext-align:center;\n}\n</style>\n</head>\n\n<table width=\"1024\" border=\"0\">\n  <tr>\n    <td width=\"900\" height=\"450\" bgcolor=\"#D2DBEC\">\n\t<table width=\"900\" height=\"450\" border=\"0\" align=\"center\" bordercolor=\"#ABBCD8\">\n\t  <tr>\n\t\t<td width=\"900\" height=\"450\" align=\"center\" valign=\"top\" bgcolor=\"#FFFFFF\"><table width=\"900\" height=\"169\" border=\"0\">\n          <tr>\n            <th scope=\"col\"><p>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( image_tag "banner.jpg", :width => "900", :height => "169" ).to_s); @output_buffer.concat "</p>\n              </th>\n          </tr>\n        </table>\n\t\t  <table width=\"904\" border=\"1\" align=\"center\" bgcolor=\"#d2dbec\" cellpadding=5>\n            <tr>\n              <th  >Please fill in all fields with your sample data.<br>  Click the CREATE button when you are finished to add the sample into the database and begin the tracking process.<br>\n\t\t\t  Thank you for entering your sample in the NRDPFC DNA databank.<br>  You can check the tracking section to follow your sample through the system.</th>\n            </tr>\n          </table>\n<style type=\"text/css\">\ntable, td, th\ntd\n{\ntext-align:left;\n}\n</style>\n\n<div align=\"center\">          \n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;  if ENV['RAILS_SITE'] == 'TRACKER' ; @output_buffer.concat "\n\t<h3 style=background-color:yellow>"
+; @output_buffer.concat(( link_to 'DEMO Home', menu_path ).to_s); @output_buffer.concat "</h3>\n"
+; else; @output_buffer.concat "\n\t<h3>"
+; @output_buffer.concat(( link_to 'Home', menu_path ).to_s); @output_buffer.concat "</h3>\n"
+; end; @output_buffer.concat "\t\n\n<h2><b><font color=red>SUBMIT</font></b> New Sample </h2>\n\n\t<table width=\"905\" height=\"395\" border=\"0\" align=\"left\" cellspacing=\"2\" cellpadding = \"2\">\n\t\t<tr><th>Name</th><th>Value</th><th>Description</th></tr>\n         <tr></tr>\n\t"
+
+
+
+
+
+
+;  form_for(@sample) do |f| ; @output_buffer.concat "\n\t<tr><td  width=\"25%\">"
+; @output_buffer.concat(( f.label :submitted_by ).to_s); @output_buffer.concat "</td><td width = \"35%\" >"; @output_buffer.concat(( f.text_field :submitted_by ).to_s); @output_buffer.concat "</td><td width = \"40%\" > Current user Logged in</td></tr>\n\t<tr align=left><td>"
+; @output_buffer.concat(( f.label :shipping_date ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.calendar_date_select :shipping_date ).to_s); @output_buffer.concat "</td><td>The date sample was shipped - click on calendar</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :date_submitted ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :date_submitted,:value => f.object.date_submitted.strftime('%Y-%m-%d')  unless f.object.date_submitted.nil?  ).to_s); @output_buffer.concat "</td><td>Default is today's date</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :field_code ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :field_code ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat((#{FIELD_CODE_DESC).to_s); @output_buffer.concat "</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :organism_index, 'Necropsy Sample Number' ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :organism_index ).to_s); @output_buffer.concat "</td><td>For Necropsies only. This distiguishes multiple samples from the same individual (e.g. 1,2,3,4)<br>Please clearly label samples this way.</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :sample_bc, 'Sample Barcode' ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :sample_bc ).to_s); @output_buffer.concat "</td><td>Sample Bar Code if available</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :photo_id, 'Sighting ID' ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :photo_id ).to_s); @output_buffer.concat "</td><td>The unique sighting photo record number associated with this sample</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :field_indent, 'Field Identification (NEA)').to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :field_ident ).to_s); @output_buffer.concat "</td><td>The potential NEA # of the individual sampled</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :collected_on_day ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.collection_select(:collected_on_day , Sample::DD, :to_s, :to_s, {:include_blank => true, :prompt => true } , {"style" => "width:105px" } ) ).to_s); @output_buffer.concat "</td><td>Choose Day from drop down list 1-31 or blank</tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :collected_on_month ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, {:include_blank => true, :prompt => true}, {"style" => "width:105px" } ) ).to_s); @output_buffer.concat "</td><td>Choose Month from drop down list 1-12 or blank</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :collected_on_year ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) ).to_s); @output_buffer.concat "</td><td>Choose Year from drop down list</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :organization_id ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.collection_select( :organization_id, Organization.find(:all), :id, :org_name, {:include_blank => true, :prompt => true }, {"style" => "width:105px" }) ).to_s); @output_buffer.concat "</td><td>The team who collected the sample</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :text_tissue_type ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.collection_select( :text_tissue_type , Sample::TT, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) ).to_s); @output_buffer.concat "</td><td>Choose Tissue type from drop down list</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :export_permit ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :export_permit ).to_s); @output_buffer.concat "</td><td>Export Permit</td></tr> \n\t<tr height=\"25\"><td>"
+; @output_buffer.concat(( f.label :import_permit ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :import_permit ).to_s); @output_buffer.concat "</td><td>Import Permit</td></tr> \n\t<tr><td>"
+; @output_buffer.concat(( f.label :current_location ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :current_location ).to_s); @output_buffer.concat "</td><td>The current location of the sample</td></tr>\n\t<tr><td>"
+; @output_buffer.concat(( f.label :comments ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( f.text_field :comments ).to_s); @output_buffer.concat "</td><td>Any other comments relevant to this sample</td></tr>\n\n\t"
+
+; @output_buffer.concat(( f.hidden_field :project_id, {:value => 1} ).to_s); @output_buffer.concat "\n\t"
+; @output_buffer.concat(( f.hidden_field :user_id  ).to_s); @output_buffer.concat "\n\t"
+; @output_buffer.concat(( f.hidden_field :remote_data_entry, {:value => true} ).to_s); @output_buffer.concat "\n\n\t"
+
+;  @sample.text_tissue_type = params[:text_tissue_type] ; @output_buffer.concat "\n\t"
+;  @sample.collected_on_day = params[:collected_on_day] ; @output_buffer.concat "\n\t"
+;  @sample.collected_on_month = params[:collected_on_month] ; @output_buffer.concat "\n\t"
+;  @sample.collected_on_year = params[:collected_on_year] ; @output_buffer.concat "\n\t"
+;  @sample.project_id = 1; @output_buffer.concat "\n\t"
+;  @sample.import_permit = "CA027"; @output_buffer.concat "\n\t<tr><td>"
+; @output_buffer.concat(( f.submit "Create" ).to_s); @output_buffer.concat "</td></tr>\n"
+;  end ; @output_buffer.concat "\n</div>\n        </tr>\n        </table>\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/source/rails/DataEntry/app/views/samples/new.html.erb:86:in `compile!'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/renderable.rb:61:in `compile'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/renderable.rb:28:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/template.rb:205:in `render_template'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/base.rb:265:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/base.rb:348:in `_render_with_layout'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/base.rb:262:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:1250:in `render_for_file'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:942:in `render_without_benchmark'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:51:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:51:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:135:in `send'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:135:in `custom'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:179:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:179:in `respond'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:173:in `each'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:173:in `respond'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/source/rails/DataEntry/app/controllers/samples_controller.rb:66:in `new'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:1331:in `send'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/filters.rb:617:in `call_filters'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/flash.rb:151:in `perform_action'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:532:in `send'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:532:in `process_without_filters'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/filters.rb:606:in `process'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:391:in `process'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:386:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/routing/route_set.rb:438:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:87:in `dispatch'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:121:in `_call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:29:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:29:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:9:in `cache'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:28:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/string_coercion.rb:25:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/params_parser.rb:15:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/session/cookie_store.rb:100:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/failsafe.rb:26:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/lock.rb:11:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/lock.rb:11:in `synchronize'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/lock.rb:11:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:114:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/reloader.rb:34:in `run'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:108:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rails-2.3.9/lib/rails/rack/static.rb:31:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/urlmap.rb:47:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/urlmap.rb:41:in `each'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/urlmap.rb:41:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rails-2.3.9/lib/rails/rack/log_tailer.rb:17:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/content_length.rb:13:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/handler/webrick.rb:48:in `service'
+c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/handler/webrick.rb:14:in `run'
+c:/ruby/lib/ruby/gems/1.8/gems/rails-2.3.9/lib/commands/server.rb:111
+c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:4
+-e:2:in `load'
+-e:2
+
+ActionView::TemplateError (compile error
+C:/source/rails/DataEntry/app/views/samples/new.html.erb:79: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n</...
+      ^
+C:/source/rails/DataEntry/app/views/samples/new.html.erb:84: syntax error, unexpected kENSURE, expecting ')'
+C:/source/rails/DataEntry/app/views/samples/new.html.erb:86: syntax error, unexpected kEND, expecting ')') on line #79 of app/views/samples/new.html.erb:
+76: 	<% @sample.project_id = 1%>
+77: 	<% @sample.import_permit = "CA027"%>
+78: 	<tr><td><%= f.submit "Create" %></td></tr>
+79: <% end %>
+80: </div>
+81:         </tr>
+82:         </table>
+
+    app/views/samples/new.html.erb:86:in `compile!'
+    app/controllers/samples_controller.rb:66:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (31.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 07:55:22) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 703ms (View: 234, DB: 16) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 08:08:27) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::FIELD_INDENT_DESC) on line #57 of app/views/samples/new.html.erb:
+54: 	<tr><td><%= f.label :organism_index, 'Necropsy Sample Number' %></td><td><%= f.text_field :organism_index %></td><td>For Necropsies only. This distiguishes multiple samples from the same individual (e.g. 1,2,3,4)<br>Please clearly label samples this way.</td></tr>
+55: 	<tr><td><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td><%=SAMPLE_BC_DESC%></td></tr>
+56: 	<tr><td><%= f.label :photo_id, 'Sighting ID' %></td><td><%= f.text_field :photo_id %></td><td>The unique sighting photo record number associated with this sample</td></tr>
+57: 	<tr><td><%= f.label :field_indent, 'Field Identification (NEA)'%></td><td><%= f.text_field :field_ident %></td><td><%=FIELD_INDENT_DESC%></td></tr>
+58: 	<tr><td><%= f.label :collected_on_day %></td><td><%= f.collection_select(:collected_on_day , Sample::DD, :to_s, :to_s, {:include_blank => true, :prompt => true } , {"style" => "width:105px" } ) %></td><td>Choose Day from drop down list 1-31 or blank</tr>
+59: 	<tr><td><%= f.label :collected_on_month %></td><td><%= f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, {:include_blank => true, :prompt => true}, {"style" => "width:105px" } ) %></td><td>Choose Month from drop down list 1-12 or blank</td></tr>
+60: 	<tr><td><%= f.label :collected_on_year %></td><td><%= f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Choose Year from drop down list</td></tr>
+
+    app/views/samples/new.html.erb:57
+    app/views/samples/new.html.erb:49
+    app/controllers/samples_controller.rb:66:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (156.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 08:08:54) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 594ms (View: 62, DB: 0) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (15.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 08:10:20) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 359ms (View: 78, DB: 16) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 08:10:40) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 312ms (View: 156, DB: 47) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:47:21) [GET]
+  [4;36;1mUser Columns (46.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 266ms (View: 78, DB: 47) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:48:02) [GET]
+  [4;35;1mUser Columns (31.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 125ms (View: 47, DB: 31) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:50:46) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 16) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:51:05) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 16) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:51:33) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 0) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:51:53) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 109ms (View: 31, DB: 0) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:52:15) [GET]
+  [4;36;1mUser Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 125ms (View: 47, DB: 31) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:53:15) [GET]
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 109ms (View: 31, DB: 16) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:53:59) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 109ms (View: 47, DB: 0) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:54:13) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 109ms (View: 47, DB: 0) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:54:56) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 16) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 08:55:29) [GET]
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 172ms (View: 47, DB: 16) | 200 OK [http://localhost/menu]
