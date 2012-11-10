@@ -55,15 +55,15 @@ text-align:left;
 	<tr><td><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td><%=SAMPLE_BC_DESC%></td></tr>
 	<tr><td><%= f.label :photo_id, 'Sighting ID' %></td><td><%= f.text_field :photo_id %></td><td>The unique sighting photo record number associated with this sample</td></tr>
 	<tr><td><%= f.label :field_indent, 'Field Identification (NEA)'%></td><td><%= f.text_field :field_ident %></td><td><%=FIELD_INDENT_DESC%></td></tr>
-	<tr><td><%= f.label :collected_on_day %></td><td><%= f.collection_select(:collected_on_day , Sample::DD, :to_s, :to_s, {:include_blank => true, :prompt => true } , {"style" => "width:105px" } ) %></td><td>Choose Day from drop down list 1-31 or blank</tr>
-	<tr><td><%= f.label :collected_on_month %></td><td><%= f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, {:include_blank => true, :prompt => true}, {"style" => "width:105px" } ) %></td><td>Choose Month from drop down list 1-12 or blank</td></tr>
-	<tr><td><%= f.label :collected_on_year %></td><td><%= f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Choose Year from drop down list</td></tr>
-	<tr><td><%= f.label :collected_by %></td><td><%= f.collection_select( :organization_id, Organization.find(:all), :id, :org_name, {:include_blank => true, :prompt => true }, {"style" => "width:105px" }) %></td><td>The team who collected the sample</td></tr>
-	<tr><td><%= f.label :text_tissue_type %></td><td><%= f.collection_select( :text_tissue_type , Sample::TT, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Choose Tissue type from drop down list</td></tr>
-	<tr><td><%= f.label :export_permit %></td><td><%= f.text_field :export_permit %></td><td>Export Permit</td></tr> 
-	<tr height="25"><td><%= f.label :import_permit %></td><td><%= f.text_field :import_permit %></td><td>Import Permit</td></tr> 
-	<tr><td><%= f.label :current_location %></td><td><%= f.text_field :current_location %></td><td>The current location of the sample</td></tr>
-	<tr><td><%= f.label :comments %></td><td><%= f.text_field :comments %></td><td>Any other comments relevant to this sample</td></tr>
+	<tr><td><%= f.label :collected_on_day %></td><td><%= f.collection_select(:collected_on_day , Sample::DD, :to_s, :to_s, {:include_blank => true, :prompt => true } , {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></tr>
+	<tr><td><%= f.label :collected_on_month %></td><td><%= f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, {:include_blank => true, :prompt => true}, {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></td></tr>
+	<tr><td><%= f.label :collected_on_year %></td><td><%= f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></td></tr>
+	<tr><td><%= f.label :collected_by %></td><td><%= f.collection_select( :organization_id, Organization.find(:all), :id, :org_name, {:include_blank => true, :prompt => true }, {"style" => "width:105px" }) %></td><td><%=ORGANIZATION_DESC%></td></tr>
+	<tr><td><%= f.label :text_tissue_type %></td><td><%= f.collection_select( :text_tissue_type , Sample::TT, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td><%=TISSUE_TYPE_DESC%></td></tr>
+	<tr><td><%= f.label :export_permit %></td><td><%= f.text_field :export_permit %></td><td><%=EXPORT_PERMIT_DESC%></td></tr> 
+	<tr height="25"><td><%= f.label :import_permit %></td><td><%= f.text_field :import_permit %></td><td><%=IMPORT_PERMIT_DESC%></td></tr> 
+	<tr><td><%= f.label :current_location %></td><td><%= f.text_field :current_location %></td><td><%=CURRENT_LOC_DESC%></td></tr>
+	<tr><td><%= f.label :comments %></td><td><%= f.text_field :comments %></td><td><%=COMMENTS_DESC%></td></tr>
 
 	<%= f.hidden_field :project_id, {:value => 1} %>
 	<%= f.hidden_field :user_id  %>
