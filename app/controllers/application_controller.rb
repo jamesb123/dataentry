@@ -14,7 +14,7 @@ YY = ["2007","2008","2009","2010","2011","2012","2013","2014","2015"]
 
 FIELD_CODE_DESC = "The whale letter (A,B,C,AA,etc) which is assigned to a whale in the field OR the necropsy case number (MJM9604)"
 SAMPLE_BC_DESC = "The barcode on the tube for the relevant sample"
-FIELD_INDENT_DESC = "The potential NEA (DIGITS) number of the whale from whom the sample was taken from, if the animal was identifiable in the field and/or if confirmed by DIGITS at a later time. Another acceptable field identification would be '2011 Calf of 1802' or 'Calf of 1802' if an NEAq number has not yet been assigned."
+FIELD_IDENT_DESC = "The potential NEA (DIGITS) number of the whale from whom the sample was taken from, if the animal was identifiable in the field and/or if confirmed by DIGITS at a later time. Another acceptable field identification would be '2011 Calf of 1802' or 'Calf of 1802' if an NEAq number has not yet been assigned."
 DMY_DESC = "The day/month/year that the sample was collected"
 ORGANIZATION_DESC = "The organization (eg NEAq) AND platform (ie vessel name such as NEAq's boat 'Nereid') who collected the sample. The 'PLATFORM' needs to be emphasized since we have had problems where two vessels have gone out on the same day and collected samples for 2 whales, both given a whale letter 'A'."
 TISSUE_TYPE_DESC = "The type of tissue which was collected from the sampled individual"

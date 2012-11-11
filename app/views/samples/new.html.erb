@@ -54,7 +54,7 @@ text-align:left;
 	<tr><td><%= f.label :organism_index, 'Necropsy Sample Number' %></td><td><%= f.text_field :organism_index %></td><td>For Necropsies only. This distiguishes multiple samples from the same individual (e.g. 1,2,3,4)<br>Please clearly label samples this way.</td></tr>
 	<tr><td><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td><%=SAMPLE_BC_DESC%></td></tr>
 	<tr><td><%= f.label :photo_id, 'Sighting ID' %></td><td><%= f.text_field :photo_id %></td><td>The unique sighting photo record number associated with this sample</td></tr>
-	<tr><td><%= f.label :field_indent, 'Field Identification (NEA)'%></td><td><%= f.text_field :field_ident %></td><td><%=FIELD_INDENT_DESC%></td></tr>
+	<tr><td><%= f.label :field_indent, 'Field Identification (NEA)'%></td><td><%= f.text_field :field_ident %></td><td><%=FIELD_IDENT_DESC%></td></tr>
 	<tr><td><%= f.label :collected_on_day %></td><td><%= f.collection_select(:collected_on_day , Sample::DD, :to_s, :to_s, {:include_blank => true, :prompt => true } , {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></tr>
 	<tr><td><%= f.label :collected_on_month %></td><td><%= f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, {:include_blank => true, :prompt => true}, {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></td></tr>
 	<tr><td><%= f.label :collected_on_year %></td><td><%= f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></td></tr>
