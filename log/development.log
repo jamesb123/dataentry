@@ -39068,3 +39068,524 @@ Rendering samples/new
   [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
   [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
 Completed in 453ms (View: 78, DB: 0) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (35.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:12:07) [GET]
+Rendering account/login
+Completed in 15ms (View: 15, DB: 35) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:12:19) [POST]
+  Parameters: {"commit"=>"Log in", "password"=>"bagend12", "login"=>"tester"}
+  [4;36;1mUser Columns (270.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (30.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Rendering account/login
+Completed in 4400ms (View: 5, DB: 300) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:12:31) [POST]
+  Parameters: {"commit"=>"Log in", "password"=>"3333", "login"=>"3333"}
+  [4;35;1mUser Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = '3333') LIMIT 1[0m
+Redirected to http://localhost:3001/menu?notice=Logged+in+successfully
+Completed in 50ms (DB: 20) | 302 Found [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:12:32) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 150ms (View: 120, DB: 15) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 13:12:48) [GET]
+  [4;35;1mUser Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;35;1mSample Columns (650.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;36;1mOrganization Load (50.0ms)[0m   [0;1mSELECT * FROM `organizations` [0m
+  [4;35;1mOrganization Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+Completed in 921ms (View: 71, DB: 740) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:14:04) [GET]
+  [4;35;1mUser Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 70ms (View: 10, DB: 25) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-10 13:14:22) [GET]
+  [4;36;1mUser Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/account/login
+Completed in 55ms (DB: 15) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:14:22) [GET]
+Rendering account/login
+Completed in 5ms (View: 0, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-10 13:14:34) [GET]
+
+ActionController::RoutingError (No route matches "/account/importexport.pdf" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:23:19) [POST]
+  Parameters: {"commit"=>"Log in", "password"=>"bagend12", "login"=>"tester"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Rendering account/login
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:23:33) [POST]
+  Parameters: {"commit"=>"Log in", "password"=>"3333", "login"=>"3333"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = '3333') LIMIT 1[0m
+Redirected to http://localhost:3001/menu?notice=Logged+in+successfully
+Completed in 78ms (DB: 16) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:23:34) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+
+ActionView::TemplateError (undefined method `project' for #<User:0x9535de8>) on line #40 of app/views/samples/menu.html.erb:
+37:     			<tr><td colspan=2><h2>Menu for Right Whale Samples</h2></td></tr>
+38: 	            <tr><td colspan=3><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
+39: 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
+40: 				<tr><td colspan=2> Logged in as: <%= current_user.name%>current user project <%=current_user.project%></td><td></td></tr>
+41: 				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
+42: 				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+43: 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
+
+    app/views/samples/menu.html.erb:40
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:23:56) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 78ms (View: 16, DB: 31) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:25:09) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (31.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+
+ActionView::TemplateError (undefined local variable or method `current_project' for #<ActionView::Base:0x950cb98>) on line #40 of app/views/samples/menu.html.erb:
+37:     			<tr><td colspan=2><h2>Menu for Right Whale Samples</h2></td></tr>
+38: 	            <tr><td colspan=3><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
+39: 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
+40: 				<tr><td colspan=2> Logged in as: <%= current_user.name%> current user project <%=current_user.project_id%><%=current_project.name%></td><td></td></tr>
+41: 				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
+42: 				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+43: 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
+
+    app/views/samples/menu.html.erb:40
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:25:28) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+
+ActionView::TemplateError (undefined method `current_project' for #<ActionView::Base:0x95363b8>) on line #40 of app/views/samples/menu.html.erb:
+37:     			<tr><td colspan=2><h2>Menu for Right Whale Samples</h2></td></tr>
+38: 	            <tr><td colspan=3><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
+39: 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
+40: 				<tr><td colspan=2> Logged in as: <%= current_user.name%> current user project <%=current_user.project_id%><%=self.current_project.name%></td><td></td></tr>
+41: 				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
+42: 				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+43: 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
+
+    app/views/samples/menu.html.erb:40
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (15.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 13:29:41) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (78.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 218ms (View: 47, DB: 78) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-10 13:29:45) [GET]
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/account/login
+Completed in 47ms (DB: 16) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 13:29:45) [GET]
+Rendering account/login
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-10 14:50:39) [GET]
+Rendering account/login
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-10 14:50:44) [GET]
+  [4;35;1mUser Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering account/signup
+Completed in 54ms (View: 20, DB: 15) | 200 OK [http://localhost/account/signup]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-10 14:51:11) [POST]
+  Parameters: {"commit"=>"Create New Login", "user"=>{"password"=>"1111", "name"=>"1111", "login"=>"1111", "password_confirmation"=>"1111", "email"=>"1111@"}}
+  [4;35;1mUser Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (5.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '1111') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1111@') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`is_admin`, `data_entry_only`, `project_id`, `remember_token_expires_at`, `name`, `login`, `remember_token`, `created_at`, `email`, `crypted_password`, `salt`, `updated_at`) VALUES(0, 1, 1, NULL, '1111', '1111', NULL, '2012-11-10 19:51:11', '1111@', 'c4b8b64eea7c5ce0e51862f5c375ad80b7d7b56c', 'a3f1ae88c635aa0894e661db7fba1027707ca2b0', '2012-11-10 19:51:11')[0m
+Sent mail to 1111@
+
+Date: Sat, 10 Nov 2012 14:51:11 -0500
+From: info@nrdpfc.ca
+Subject: DNA Account Confirmation
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+This email confirms your account creation for the Right Whale DNA Analysis System<br>
+Please keep this information in a safe place<br>
+Real Name: 1111<br>
+Your email:  1111@ <br>
+Login: 1111<br>
+Password: 1111
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+SocketError (getaddrinfo: The storage control blocks were destroyed. ):
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `initialize'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `open'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  C:/Ruby187/lib/ruby/1.8/timeout.rb:67:in `timeout'
+  C:/Ruby187/lib/ruby/1.8/timeout.rb:101:in `timeout'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (5.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-10 14:52:02) [POST]
+  Parameters: {"commit"=>"Create New Login", "user"=>{"password"=>"1111", "name"=>"1111", "login"=>"1111", "password_confirmation"=>"1111", "email"=>"1111@"}}
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '1111') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1111@') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`is_admin`, `data_entry_only`, `project_id`, `remember_token_expires_at`, `name`, `login`, `remember_token`, `created_at`, `email`, `crypted_password`, `salt`, `updated_at`) VALUES(0, 1, 1, NULL, '1111', '1111', NULL, '2012-11-10 19:52:02', '1111@', 'c1418d2dc350c06f3be2b99d732c3a950b48f1de', '18099b3770656c40472eee13226f6eee760026d8', '2012-11-10 19:52:02')[0m
+Sent mail to 1111@
+
+Date: Sat, 10 Nov 2012 14:52:02 -0500
+From: info@nrdpfc.ca
+Subject: DNA Account Confirmation
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+This email confirms your account creation for the Right Whale DNA Analysis System<br>
+Please keep this information in a safe place<br>
+Real Name: 1111<br>
+Your email:  1111@ <br>
+Login: 1111<br>
+Password: 1111
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+
+SocketError (getaddrinfo: The storage control blocks were destroyed. ):
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `initialize'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `open'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  C:/Ruby187/lib/ruby/1.8/timeout.rb:67:in `timeout'
+  C:/Ruby187/lib/ruby/1.8/timeout.rb:101:in `timeout'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (90.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-10 14:54:17) [POST]
+  Parameters: {"commit"=>"Create New Login", "user"=>{"password"=>"1111", "name"=>"1111", "login"=>"1111", "password_confirmation"=>"1111", "email"=>"1111@"}}
+  [4;35;1mUser Columns (45.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (5.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '1111') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '1111@') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`is_admin`, `data_entry_only`, `project_id`, `remember_token_expires_at`, `name`, `login`, `remember_token`, `created_at`, `email`, `crypted_password`, `salt`, `updated_at`) VALUES(0, 1, 1, NULL, '1111', '1111', NULL, '2012-11-10 19:54:17', '1111@', 'a569a9a8f94093011bc82378b964386d2652562a', 'b3148c4c3ef6e03b68f3dec6ca076094d5c4005b', '2012-11-10 19:54:17')[0m
+Sent mail to 1111@
+
+Date: Sat, 10 Nov 2012 14:54:17 -0500
+From: info@nrdpfc.ca
+Subject: DNA Account Confirmation
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+This email confirms your account creation for the Right Whale DNA Analysis System<br>
+Please keep this information in a safe place<br>
+Real Name: 1111<br>
+Your email:  1111@ <br>
+Login: 1111<br>
+Password: 1111
+  [4;36;1mSQL (5.0ms)[0m   [0;1mROLLBACK[0m
+
+SocketError (getaddrinfo: The storage control blocks were destroyed. ):
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `initialize'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `open'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  C:/Ruby187/lib/ruby/1.8/timeout.rb:67:in `timeout'
+  C:/Ruby187/lib/ruby/1.8/timeout.rb:101:in `timeout'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:551:in `do_start'
+  C:/Ruby187/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user.rb:32:in `send_welcome_mail'
+  app/controllers/account_controller.rb:44:in `signup'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (110.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-10 14:55:40) [POST]
+  Parameters: {"commit"=>"Create New Login", "user"=>{"password"=>"1111", "name"=>"1111", "login"=>"1111", "password_confirmation"=>"1111", "email"=>"111111@"}}
+
+SyntaxError (C:/source/rails/dataentry/app/models/user.rb:178: syntax error, unexpected kEND, expecting $end):
+  app/controllers/account_controller.rb:40:in `signup'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (90.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-10 14:56:32) [POST]
+  Parameters: {"commit"=>"Create New Login", "user"=>{"password"=>"1111", "name"=>"1111", "login"=>"1111", "password_confirmation"=>"1111", "email"=>"111111@"}}
+  [4;35;1mUser Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '1111') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '111111@') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`is_admin`, `data_entry_only`, `project_id`, `remember_token_expires_at`, `name`, `login`, `remember_token`, `created_at`, `email`, `crypted_password`, `salt`, `updated_at`) VALUES(0, 1, 1, NULL, '1111', '1111', NULL, '2012-11-10 19:56:32', '111111@', '51499f07f6055333dedae080762b2ff80eb1d3f3', '04e2e839b516b03d4c9958236f1818a191ab7e9b', '2012-11-10 19:56:32')[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/account
+Completed in 80ms (DB: 35) | 302 Found [http://localhost/account/signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#index (for 127.0.0.1 at 2012-11-10 14:56:32) [GET]
+  [4;36;1mUser Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 95) LIMIT 1[0m
+Rendering account/index
+Completed in 50ms (View: 10, DB: 10) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-10 14:58:31) [GET]
+  [4;35;1mUser Columns (50.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 95) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 130ms (View: 25, DB: 50) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-10 14:58:35) [GET]
+  [4;36;1mUser Columns (45.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 95) LIMIT 1[0m
+  [4;36;1mSample Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 161ms (View: 41, DB: 65) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2012-11-10 14:58:40) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"current_location"=>"", "user_id"=>"95", "project_id"=>"1", "text_tissue_type"=>"", "field_code"=>"", "organization_id"=>"", "collected_on_month"=>"", "photo_id"=>"", "date_submitted"=>"2012-11-10", "export_permit"=>"", "collected_on_year"=>"", "field_ident"=>"", "submitted_by"=>"1111", "comments"=>"", "collected_on_day"=>"", "organism_index"=>"", "shipping_date"=>"", "remote_data_entry"=>"true", "import_permit"=>"CA027", "sample_bc"=>""}}
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 95) LIMIT 1[0m
+  [4;36;1mSample Columns (35.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (5.0ms)[0m   [0;1mINSERT INTO `samples` (`project_id`, `location_3`, `locality`, `shipping_material_txt_prv`, `locality_type_text`, `photo_id`, `storage_building`, `coordinate_system`, `shippingmaterial_id`, `extraction_method_id`, `collected_by`, `text_tissue_type`, `sample_bc`, `approved`, `location_accuracy`, `sample_bc_prv`, `collector_comments`, `collected_on_day`, `comments`, `location_measurement_method`, `field_code`, `received_by_trent`, `receiver_comments`, `sighting_id`, `platebc`, `collected_on_month`, `current_location`, `tissue_type_id`, `organization_text`, `true_longitude`, `location_2`, `dna_extracted`, `storage_medium_text`, `organization_id`, `xy_position`, `diet_analysis`, `date_collected`, `locality_comments`, `field_ident`, `export_permit`, `discrepancy`, `user_id`, `import_permit`, `rehydrated`, `batch_number`, `tissue_remaining`, `country_id`, `storage_medium_id`, `organism_index`, `original_tissue_type`, `survey_id`, `type_lat_long`, `condition`, `location_4`, `age`, `organism_id`, `longitude`, `storage_box`, `locality_type_id`, `storage_room`, `received_by`, `profiling_date`, `date_submitted`, `location_1`, `submitted_by`, `collected_on_year`, `plateposition`, `profiling_completed`, `remote_data_entry`, `date_received`, `latitude`, `province`, `storage_fridge`, `shipping_date`, `extraction_date`, `country`, `province_id`, `submitter_comments`, `true_latitude`, `discrepancy_comments`) VALUES(1, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', '', 0, NULL, NULL, NULL, '', '', NULL, '', NULL, NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, '95', 'CA027', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2012-11-10 00:00:00', NULL, '1111', '', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/samples/179998
+Completed in 115ms (DB: 65) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2012-11-10 14:58:40) [GET]
+  Parameters: {"id"=>"179998"}
+  [4;35;1mUser Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 95) LIMIT 1[0m
+  [4;35;1mSample Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (0.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 179998) [0m
+  [4;35;1mGender Load (235.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 179998) [0m
+  [4;36;1mDnaResult Load (295.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 179998) [0m
+  [4;35;1mMtDna Load (135.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 179998) [0m
+  [4;36;1mOrganization Columns (35.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 930ms (View: 55, DB: 725) | 200 OK [http://localhost/samples/179998]
