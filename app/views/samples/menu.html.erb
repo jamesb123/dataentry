@@ -37,7 +37,7 @@ color:black;
     			<tr><td colspan=2><h2>Menu for Right Whale Samples</h2></td></tr>
 	            <tr><td colspan=3><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
-				<tr><td colspan=2> Logged in as: <%= current_user.name%></td><td></td></tr>
+				<tr><td colspan=2> Logged in as: <%= current_user.name%> current user project <%=current_user.project_id%></td><td></td></tr>
 				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
 				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>

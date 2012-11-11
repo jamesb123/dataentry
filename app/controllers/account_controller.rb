@@ -28,7 +28,7 @@ class AccountController < ApplicationController
       end
       
       flash[:notice] = "Logged in successfully"
-      current_project = 1
+      current_project = 1 
       redirect_to :controller => '/samples', :action => 'menu' , :notice => "Logged in successfully"
     else
       flash[:notice] = "Incorrect login, please try again."
