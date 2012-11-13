@@ -39497,3 +39497,654 @@ Completed in 62ms (DB: 16) | 302 Found [http://localhost/account/logout]
 Processing AccountController#login (for 127.0.0.1 at 2012-11-10 20:56:28) [GET]
 Rendering account/login
 Completed in 16ms (View: 16, DB: 16) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 11:57:32) [GET]
+Rendering account/login
+Completed in 62ms (View: 62, DB: 31) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-11 12:16:07) [GET]
+Redirected to http://localhost:3015/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:16:07) [GET]
+Rendering account/login
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-11 12:20:02) [GET]
+
+ActionController::RoutingError (No route matches "/account/importexport.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:20:37) [GET]
+Rendering account/login
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-11 12:20:39) [GET]
+
+ActionController::RoutingError (No route matches "/public/importexport.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:21:43) [GET]
+Rendering account/login
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#public to pdf (for 127.0.0.1 at 2012-11-11 12:21:46) [GET]
+  Parameters: {"id"=>"importexport"}
+
+ActionController::UnknownAction (No action responded to public. Actions: authorized?, download_table, index, login, logout, and signup):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:22:58) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:23:42) [GET]
+Rendering account/login
+Completed in 94ms (View: 94, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#public to pdf (for 127.0.0.1 at 2012-11-11 12:23:44) [GET]
+  Parameters: {"id"=>"importexport"}
+
+ActionController::UnknownAction (No action responded to public. Actions: authorized?, download_table, index, login, logout, and signup):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:26:09) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#public to pdf (for 127.0.0.1 at 2012-11-11 12:26:11) [GET]
+  Parameters: {"id"=>"importexport"}
+
+ActionController::UnknownAction (No action responded to public. Actions: authorized?, download_table, index, login, logout, and signup):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 12:26:30) [GET]
+Rendering account/login
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-11 12:26:32) [GET]
+
+ActionController::RoutingError (No route matches "/account/importexport.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-11 13:03:50) [GET]
+Rendering account/login
+Completed in 109ms (View: 109, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 17:13:02) [GET]
+Rendering account/login
+Completed in 31ms (View: 31, DB: 31) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-11-12 17:13:05) [GET]
+
+ActionController::RoutingError (No route matches "/account/importexport.pdf" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:03:01) [GET]
+Rendering account/login
+ERROR: compiling _run_rhtml_app47views47account47login46rhtml RAISED compile error
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected '<'
+; @output_buffer.concat((<a href="http://web.nrdpfc.ca/"...
+                          ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected tINTEGER, expecting kDO or '{' or '('
+...web.nrdpfc.ca/">Copyright 2012 NRDPFC</a>).to_s); @output_bu...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: unknown regexp option - p
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: unmatched ): /a>).to_s); @output_buffer.concat "\n          <p align=\"left\">&nbsp;</
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected $undefined
+... <p align=\"left\">&nbsp;</p>\n\t\t\t<tr>\n              <td...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected $undefined
+...left\">&nbsp;</p>\n\t\t\t<tr>\n              <td><div align=...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected '<'
+...t\t\t<tr>\n              <td><div align=\"center\">\n       ...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected $undefined
+...              <td><div align=\"center\">\n              \t"
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:70: syntax error, unexpected kENSURE, expecting ')'
+C:/source/rails/DataEntry/app/views/account/login.rhtml:72: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_rhtml_app47views47account47login46rhtml(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<html>\n<style type=\"text/css\">\ntable, td, th\n{\nborder-collapse:collapse;\t\nborder:0px ;\ntext-align:left;\n}\nth\n{\nbackground-color:#d2dbec;\ncolor:black;\n}\n</style>\n<table width=\"1024\" border=\"0\">\n  <tr>\n    <td width=900 height=\"450\" bgcolor=\"#D2DBEC\">\n\t<table width=\"900\" height=\"450\" border=\"0\" align=\"center\" bordercolor=\"#ABBCD8\">\n\t  <tr>\n\t\t<td width=\"900\" height=\"450\" align=\"center\" valign=\"top\" bgcolor=\"#FFFFFF\"><table width=\"800\" height=\"169\" border=\"0\">\n          <tr>\n            <th scope=\"col\"><p>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( image_tag "banner.jpg", :width => "900", :height => "169" ).to_s); @output_buffer.concat "</p>\n              </th>\n          </tr>\n        </table>\n\t\n\n          <table width=\"600\" height=\"350\" border=\"0\" align=\"center\" cellspacing=\"1\" valign = top>\n            <tr></tr>\n\t\t\t<tr>"
+
+
+
+
+
+
+
+; @output_buffer.concat(( error_messages_for :user ).to_s); @output_buffer.concat "</tr>\n<tr><td  colheight=50% colspan=2>Welcome to the NRDPFC Right Whale Sample Submission/Tracking website.<br>\nPlease logon in using the following boxes.<br>\nIf you do not have a login yet, please click on \"Create New Login\" link below.<br>\n<b>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca<br>\nClick on Link below for information regarding the permits needed to send sample to NRDPFC<br></b>\n\n\t\t\t"
+
+
+
+
+
+
+;  form_tag do 
+@output_buffer.concat "\t\t\t\t<tr><td  width = \"20%\" height = \"30\" ><label for=\"login\">Login</label><td>"; @output_buffer.concat(( text_field_tag 'login' ).to_s); @output_buffer.concat "</td></tr>\n\t\t\t\t<tr height = 50><td width=150><label for=\"password\">Password</label></td><td>"
+; @output_buffer.concat(( password_field_tag 'password' ).to_s); @output_buffer.concat "</td></tr>\n\t\t\t\t<tr height = 50><td colspan=2>"
+; @output_buffer.concat(( submit_tag 'Log in' ).to_s); @output_buffer.concat "</td><td></td></tr>\n    \t\t\t<tr><td colspan=2><a href=\"importexport.pdf\">Importing and Exporting Samples for Scientific Research</a></td></tr>\n\t\t\t\t<tr><td>"
+
+; @output_buffer.concat(( link_to "Importing and Exporting Samples for Scientific Research", :controller => "/account", :action => "pdf" ).to_s); @output_buffer.concat "</td><td>Exit the system</td></tr> \t\t\t\t<tr><td width = 300 colspan=2>"; @output_buffer.concat(( link_to "Create New Login", :controller => "/account", :action => "signup" ).to_s); @output_buffer.concat "</td></tr>\n\t\t\t"
+;  end ; @output_buffer.concat "\n            </tr>\n          </table>\n\n         <p align=\"left\">&nbsp;</p>\n\t\t "
+
+
+
+
+; @output_buffer.concat((<a href="http://web.nrdpfc.ca/">Copyright 2012 NRDPFC</a>).to_s); @output_buffer.concat "\n          <p align=\"left\">&nbsp;</p>\n\t\t\t<tr>\n              <td><div align=\"center\">\n              \t"
+
+
+
+; @output_buffer.concat(( image_tag "dfo.jpg", :alt => "1", :width => "228", :height => "50", :border => "0" ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( image_tag "trentu.jpg", :alt => "1", :width => "162", :height => "50", :border => "0" ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( image_tag "wwf.jpg", :alt => "1", :width => "37", :height => "50", :border => "0" ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( image_tag "nrdpfc.jpg", :alt => "1", :width => "67", :height => "50", :border => "0"  ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( image_tag "nea.jpg", :alt => "1", :width => "111", :height => "50", :border => "0" ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( image_tag "canadianwhale.jpg", :alt => "1", :width => "153", :height => "50", :border => "0" ).to_s); @output_buffer.concat "\n\t\t\t\t</div></td>\n\t\t\t</tr>\n      </table>\n    <p>&nbsp;</p></td>\n  </tr>\n   \n</table></td>\n  </tr>\n</table>\n\n\n</html>"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/source/rails/DataEntry/app/views/account/login.rhtml:72:in `compile!'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/renderable.rb:61:in `compile'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/renderable.rb:28:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/template.rb:205:in `render_template'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_view/base.rb:265:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:1250:in `render_for_file'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:936:in `render_without_benchmark'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:51:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:51:in `render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:1326:in `default_render'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/filters.rb:617:in `call_filters'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.9/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/flash.rb:151:in `perform_action'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:532:in `send'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:532:in `process_without_filters'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/filters.rb:606:in `process'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:391:in `process'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/base.rb:386:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/routing/route_set.rb:438:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:87:in `dispatch'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:121:in `_call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:29:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:29:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:9:in `cache'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/query_cache.rb:28:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/string_coercion.rb:25:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/params_parser.rb:15:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/session/cookie_store.rb:100:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/failsafe.rb:26:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/lock.rb:11:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/lock.rb:11:in `synchronize'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/lock.rb:11:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:114:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/reloader.rb:34:in `run'
+c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.9/lib/action_controller/dispatcher.rb:108:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rails-2.3.9/lib/rails/rack/static.rb:31:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/urlmap.rb:47:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/urlmap.rb:41:in `each'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/urlmap.rb:41:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rails-2.3.9/lib/rails/rack/log_tailer.rb:17:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/content_length.rb:13:in `call'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/handler/webrick.rb:48:in `service'
+c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+c:/ruby/lib/ruby/gems/1.8/gems/rack-1.1.3/lib/rack/handler/webrick.rb:14:in `run'
+c:/ruby/lib/ruby/gems/1.8/gems/rails-2.3.9/lib/commands/server.rb:111
+c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+./script/server:4
+-e:2:in `load'
+-e:2
+
+ActionView::TemplateError (compile error
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected '<'
+; @output_buffer.concat((<a href="http://web.nrdpfc.ca/"...
+                          ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected tINTEGER, expecting kDO or '{' or '('
+...web.nrdpfc.ca/">Copyright 2012 NRDPFC</a>).to_s); @output_bu...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: unknown regexp option - p
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: unmatched ): /a>).to_s); @output_buffer.concat "\n          <p align=\"left\">&nbsp;</
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected $undefined
+... <p align=\"left\">&nbsp;</p>\n\t\t\t<tr>\n              <td...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected $undefined
+...left\">&nbsp;</p>\n\t\t\t<tr>\n              <td><div align=...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected '<'
+...t\t\t<tr>\n              <td><div align=\"center\">\n       ...
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:48: syntax error, unexpected $undefined
+...              <td><div align=\"center\">\n              \t"
+                              ^
+C:/source/rails/DataEntry/app/views/account/login.rhtml:70: syntax error, unexpected kENSURE, expecting ')'
+C:/source/rails/DataEntry/app/views/account/login.rhtml:72: syntax error, unexpected kEND, expecting ')') on line #48 of app/views/account/login.rhtml:
+45:           </table>
+46: 
+47:          <p align="left">&nbsp;</p>
+48: 		 <%=<a href="http://web.nrdpfc.ca/">Copyright 2012 NRDPFC</a>%>
+49:           <p align="left">&nbsp;</p>
+50: 			<tr>
+51:               <td><div align="center">
+
+    app/views/account/login.rhtml:72:in `compile!'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (31.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:04:27) [GET]
+Rendering account/login
+Completed in 94ms (View: 94, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:07:56) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#pdf (for 127.0.0.1 at 2012-11-12 19:08:03) [GET]
+
+ActionController::MissingFile (Cannot read file importexport.pdf):
+  app/controllers/account_controller.rb:15:in `pdf'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:10:47) [GET]
+Rendering account/login
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#signup (for 127.0.0.1 at 2012-11-12 19:10:49) [GET]
+  [4;36;1mUser Columns (265.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering account/signup
+Completed in 828ms (View: 78, DB: 266) | 200 OK [http://localhost/account/signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:16:50) [GET]
+Rendering account/login
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#pdf (for 127.0.0.1 at 2012-11-12 19:16:54) [GET]
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/account/pdf]
+Streaming file C:/source/rails/DataEntry/public/importexport.pdf
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:17:40) [POST]
+  Parameters: {"login"=>"3333", "password"=>"3333", "commit"=>"Log in"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (62.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = '3333') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 281ms (DB: 78) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-12 19:17:41) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 453ms (View: 266, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-11-12 19:17:45) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;36;1mSample Columns (328.1ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+  [4;35;1mOrganization Load (62.5ms)[0m   [0mSELECT * FROM `organizations` [0m
+  [4;36;1mOrganization Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+Completed in 750ms (View: 188, DB: 406) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2012-11-12 19:18:00) [POST]
+  Parameters: {"sample"=>{"import_permit"=>"CA027", "sample_bc"=>"", "export_permit"=>"", "date_submitted"=>"2012-11-12", "remote_data_entry"=>"true", "text_tissue_type"=>"", "submitted_by"=>"3333", "user_id"=>"81", "project_id"=>"1", "collected_on_year"=>"", "comments"=>"", "organization_id"=>"", "field_ident"=>"", "collected_on_month"=>"", "photo_id"=>"", "shipping_date"=>"", "current_location"=>"", "collected_on_day"=>"", "organism_index"=>"", "field_code"=>"test new account permission"}, "commit"=>"Create"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;36;1mSample Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (93.8ms)[0m   [0;1mINSERT INTO `samples` (`collected_on_day`, `survey_id`, `sighting_id`, `shippingmaterial_id`, `province_id`, `platebc`, `storage_medium_id`, `coordinate_system`, `country_id`, `field_code`, `comments`, `age`, `true_longitude`, `date_received`, `submitted_by`, `type_lat_long`, `submitter_comments`, `latitude`, `location_3`, `discrepancy`, `dna_extracted`, `photo_id`, `diet_analysis`, `organization_id`, `project_id`, `date_collected`, `text_tissue_type`, `locality_comments`, `profiling_completed`, `discrepancy_comments`, `storage_medium_text`, `organization_text`, `storage_box`, `sample_bc_prv`, `sample_bc`, `organism_id`, `tissue_type_id`, `plateposition`, `field_ident`, `storage_room`, `import_permit`, `current_location`, `tissue_remaining`, `collected_on_year`, `remote_data_entry`, `longitude`, `locality_type_id`, `shipping_date`, `received_by`, `location_2`, `date_submitted`, `storage_building`, `locality_type_text`, `export_permit`, `received_by_trent`, `rehydrated`, `receiver_comments`, `collector_comments`, `locality`, `true_latitude`, `extraction_method_id`, `profiling_funded_by`, `province`, `country`, `profile_published`, `collected_by`, `location_accuracy`, `location_measurement_method`, `batch_number`, `location_4`, `original_tissue_type`, `collected_on_month`, `extraction_date`, `condition`, `profiling_done_by`, `user_id`, `shipping_material_txt_prv`, `profiling_date`, `storage_fridge`, `location_1`, `approved`, `xy_position`, `organism_index`, `publication_name`) VALUES('', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test new account permission', '', NULL, NULL, NULL, '3333', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 1, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', NULL, 'CA027', '', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, '2012-11-12', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '81', NULL, NULL, NULL, NULL, 0, NULL, '', NULL)[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3015/samples/180037
+Completed in 547ms (DB: 172) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2012-11-12 19:18:02) [GET]
+  Parameters: {"id"=>"180037"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;35;1mSample Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (0.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 180037) [0m
+  [4;35;1mGender Load (171.9ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 180037) [0m
+  [4;36;1mDnaResult Load (234.4ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 180037) [0m
+  [4;35;1mMtDna Load (218.8ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 180037) [0m
+  [4;36;1mOrganization Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (15.6ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 1312ms (View: 188, DB: 656) | 200 OK [http://localhost/samples/180037]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-12 19:31:47) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 125ms (View: 47, DB: 0) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-12 19:32:05) [GET]
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3015/account/login
+Completed in 281ms (DB: 0) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:32:06) [GET]
+Rendering account/login
+Completed in 188ms (View: 172, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:32:12) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:35:25) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:37:05) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:40:37) [GET]
+Rendering account/login
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:40:53) [GET]
+Rendering account/login
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:41:01) [POST]
+  Parameters: {"login"=>"3333", "password"=>"3333", "commit"=>"Log in"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = '3333') LIMIT 1[0m
+Redirected to http://localhost:3015/menu?notice=Logged+in+successfully
+Completed in 62ms (DB: 16) | 302 Found [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2012-11-12 19:41:01) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 31, DB: 16) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2012-11-12 19:41:09) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 81) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3015/account/login
+Completed in 234ms (DB: 0) | 302 Found [http://localhost/account/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:41:10) [GET]
+Rendering account/login
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2012-11-12 19:42:26) [GET]
+Rendering account/login
+Completed in 31ms (View: 16, DB: 16) | 200 OK [http://localhost/account/login]

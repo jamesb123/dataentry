@@ -10,12 +10,16 @@ class AccountController < ApplicationController
   def authorized?
     current_user ? true : false
   end
-    
-  # say something nice, you goof!  something sweet.
+  
+  def pdf
+    send_file("#{RAILS_ROOT}/public/importexport.pdf", :type => 'application/pdf', :disposition => 'inline')
+  end
+  
+  # say something nice
   def index
     redirect_to(:action => 'signup') unless logged_in? || User.count > 0
   end
-
+##----------------
   def login
     return unless request.post?
     self.current_user = User.authenticate(params[:login], params[:password])
@@ -35,7 +39,7 @@ class AccountController < ApplicationController
 #      redirect_to(:action => 'index',:flash => { :notice => "Log in failed"})
     end
   end
-
+##--------------------
   def signup
     @user = User.new(params[:user])
     return unless request.post?
@@ -53,7 +57,7 @@ class AccountController < ApplicationController
       flash[:error]
       render :action => 'signup'
   end
-
+###----------------
   def logout
     self.current_user.forget_me if logged_in?
     cookies.delete :auth_token
