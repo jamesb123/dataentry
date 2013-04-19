@@ -24,7 +24,11 @@ class Sample < ActiveRecord::Base
   accepts_nested_attributes_for :mt_dnas
   
   before_save :assign_collected_YMD
+  after_create :send_sample_mail
 
+  def send_sample_mail
+     Emailer.deliver_submission("mmoeyaert@nrdpfc.ca, mharnden@nrdpfc.ca, bseyler@nrdpfc.ca, james@burrett.org", "New Sample Submitted", self.submitted_by, self.project_id, self.field_code,self.date_submitted,self.shipping_date ) 
+  end
 
   def assign_collected_YMD
 

@@ -5,7 +5,7 @@ require "current_project_helpers"
 
 # require 'digest/sha1'
 # require "thread"
-
+@railstest='TEST'
 MM = ["1","2","3","4","5","6","7","8","9","10","11","12"]
 # MM = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]
 TT = [ "Skin", "Muscle", "Bone", "Brain", "Kidney", "Heart", "Other" ]
@@ -22,6 +22,10 @@ EXPORT_PERMIT_DESC = "The export permit number of the organization sending sampl
 IMPORT_PERMIT_DESC = " NRDPFC's CITIES permit number.  This number needs to be quoted when sending samples to NRDPFC. For more information regarding the type of permits required to send samples to NRDPFC, please read the notice on the sample submission log in page"
 CURRENT_LOC_DESC = "Where the sample resides before being shipped to NRDPFC"
 COMMENTS_DESC = "This is ALL other comments relevant to this sample which is on the tube or a piece of paper associated with this sample. For example, when dealing with a necropsy sample, a relevant comment may be where the whale was found dead, or 'suspected to be whale XXXX.'"
+
+  def nice_date_display(the_date)
+    return (the_date ? the_date.strftime('%Y.%m.%d') : '')
+  end
 
 class TrueClass
   def yesno

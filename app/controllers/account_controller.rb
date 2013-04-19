@@ -11,8 +11,11 @@ class AccountController < ApplicationController
     current_user ? true : false
   end
   
-  def pdf
+  def pdf1
     send_file("#{RAILS_ROOT}/public/importexport.pdf", :type => 'application/pdf', :disposition => 'inline')
+  end
+  def pdf2
+    send_file("#{RAILS_ROOT}/public/Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University.pdf", :type => 'application/pdf', :disposition => 'inline')
   end
   
   # say something nice

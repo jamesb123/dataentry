@@ -39,7 +39,8 @@ Click on Link below for information regarding the permits needed to send sample 
 				<tr height = 50><td width=150><label for="password">Password</label></td><td><%= password_field_tag 'password' %></td></tr>
 				<tr height = 50><td colspan=2><%= submit_tag 'Log in' %></td><td></td></tr>
  				<tr><td width = 300 colspan=2><%= link_to "Create a New Login", :controller => "/account", :action => "signup" %></td></tr>
-				<tr><td width=300 colspan=2><%= link_to "Importing and Exporting Samples for Scientific Research", :controller => "/account", :action => "pdf" %></td></tr>
+				<tr><td width=300 colspan=2><%= link_to "Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University", :controller => "/account", :action => "pdf2" %></td></tr>
+				<tr><td width=300 colspan=2><%= link_to "Importing and Exporting Samples for Scientific Research", :controller => "/account", :action => "pdf1" %></td></tr>
 			<% end %>
             </tr>
           </table>

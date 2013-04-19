@@ -16,7 +16,14 @@ CalendarDateSelect.format = (params[:fmt]||"iso_date").to_sym
   		<%= stylesheet_link_tag "basic" %>
 	<%else%>
 		<%= stylesheet_link_tag "basic" %>
+	<%end%>
+	
+	<%if ENV['RAILS_ENV']=='production' %>
+		<%@env = 'production'%>
+	<%else%>
+		<%@env = 'staging'%>
 	<%end%>	
+
 </head>
 <body>
 

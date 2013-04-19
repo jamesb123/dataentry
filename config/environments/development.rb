@@ -18,13 +18,17 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.raise_delivery_errors = true
 
-#config.action_mailer.smtp_settings = {
-#  :enable_starttls_auto => true,
-#  :address        => 'smtp.gmail.com',
-#  :port           => 587,
-#  :domain         => 'nrdpfc.ca',
-#  :authentication => :login,
-#  :content_type   => "text/html",
-#  :user_name      => 'drburrett@gmail.com',
-#  :password       => ''
-#}
+
+ config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp 
+  config.action_mailer.default_content_type = "text/html" 
+  config.action_mailer.default_url_options = { :host => "burrett.org" } 
+  config.action_mailer.smtp_settings = { 
+    :tls              => false, 
+    :address          => "burrett.org", 
+    :port             => 26, 
+    :domain           => "burrett.org", 
+    :authentication   => :login,
+    :user_name        => "nrdpfc@burrett.org", 
+    :password         => "nrdpfc12" 
+  } 
