@@ -137,18 +137,24 @@ vertical-align:middle;
 		<%if @sample.mt_dnas.blank? %>
 				<tr><td class="empty">Date Sequenced</td><td></td></tr>
 				<tr><td class="empty">Haplotype</td><td></td></tr>
+				<tr><td class="empty">Short Haplotype</td><td></td></tr>
 		<%else%>
 			<% @sample.mt_dnas.each do |m| %>
-			<%if m.date_sequenced.blank? %>
-				<tr><td class="empty">Date Sequenced</td><td></td></tr>
-			<%else%>	
-				<tr><td class="nempty">Date Sequenced</td><td><%= nice_date_display(m.date_sequenced) %> </td></tr>
-			<%end%>
-			<%if m.haplotype.blank? %>
-				<tr><td class="empty">Haplotype</td><td></td></tr>
-			<%else%>
-				<tr><td class=nempty>Haplotype</td><td>  <%= m.haplotype %> </td></tr>
-			<%end%>
+				<%if m.date_sequenced.blank? %>
+					<tr><td class="empty">Date Sequenced</td><td></td></tr>
+				<%else%>	
+					<tr><td class="nempty">Date Sequenced</td><td><%= nice_date_display(m.date_sequenced) %> </td></tr>
+				<%end%>
+				<%if m.haplotype.blank? %>
+					<tr><td class="empty">Haplotype</td><td></td></tr>
+				<%else%>
+					<tr><td class=nempty>Haplotype</td><td>  <%= m.haplotype %> </td></tr>
+				<%end%>
+				<%if m.haplotype_short.blank? %>
+					<tr><td class="empty">Haplotype Short</td><td></td></tr>
+				<%else%>
+					<tr><td class=nempty>Haplotype Short</td><td>  <%= m.haplotype_short %> </td></tr>
+				<%end%>
 			<%end%>
 		<%end%>
 		

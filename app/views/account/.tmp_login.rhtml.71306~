@@ -1,0 +1,66 @@
+<html>
+<style type="text/css">
+table, td, th
+{
+border-collapse:collapse;	
+border:0px ;
+text-align:left;
+}
+th
+{
+background-color:#d2dbec;
+color:black;
+}
+</style>
+<table width="1024" border="0">
+  <tr>
+    <td width=900 height="450" bgcolor="#D2DBEC">
+	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="800" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+	
+
+          <table width="600" height="350" border="0" align="center" cellspacing="1" valign = top>
+            <tr></tr>
+			<tr><%= error_messages_for :user %></tr>
+<tr><td  colheight=50% colspan=2>Welcome to the NRDPFC Right Whale Sample Submission/Tracking website.<br>
+Please logon in using the following boxes.<br>
+If you do not have a login yet, please click on "Create New Login" link below.<br>
+<b>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca<br>
+Click on Link below for information regarding the permits needed to send sample to NRDPFC<br></b>
+
+			<% form_tag do -%>
+				<tr><td  width = "20%" height = "30" ><label for="login">Login</label><td><%= text_field_tag 'login' %></td></tr>
+				<tr height = 50><td width=150><label for="password">Password</label></td><td><%= password_field_tag 'password' %></td></tr>
+				<tr height = 50><td colspan=2><%= submit_tag 'Log in' %></td><td></td></tr>
+ 				<tr><td width = 300 colspan=2><%= link_to "Create a New Login", :controller => "/account", :action => "signup" %></td></tr>
+				<tr><td width=300 colspan=2><%= link_to "Importing and Exporting Samples for Scientific Research", :controller => "/account", :action => "pdf" %></td></tr>
+			<% end %>
+            </tr>
+          </table>
+
+         <p align="left">&nbsp;</p>
+         <p align="left">&nbsp;</p>
+			<tr>
+              <td><div align="center">
+              	<%= image_tag "dfo.jpg", :alt => "1", :width => "228", :height => "50", :border => "0" %>
+				<%= image_tag "trentu.jpg", :alt => "1", :width => "162", :height => "50", :border => "0" %>
+				<%= image_tag "wwf.jpg", :alt => "1", :width => "37", :height => "50", :border => "0" %>
+				<%= image_tag "nrdpfc.jpg", :alt => "1", :width => "67", :height => "50", :border => "0"  %>
+				<%= image_tag "nea.jpg", :alt => "1", :width => "111", :height => "50", :border => "0" %>
+				<%= image_tag "canadianwhale.jpg", :alt => "1", :width => "153", :height => "50", :border => "0" %>
+				</div></td>
+			</tr>
+      </table>
+    <p>&nbsp;</p></td>
+  </tr>
+   
+</table></td>
+  </tr>
+</table>
+</html>

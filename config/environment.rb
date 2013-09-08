@@ -18,6 +18,18 @@ end
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+::RESULT_TABLES = %w[genders microsatellites mhcs mt_dnas y_chromosomes surveys sightings]
+
+# Fixes problems with ruby 1.8.7
+unless '1.9'.respond_to?(:force_encoding)
+  String.class_eval do
+    begin
+      remove_method :chars
+    rescue NameError # OK
+    end
+  end
+end
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -25,13 +37,16 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.autoload_paths += %W( #{RAILS_ROOT}/extras )
-
+  # config.gem 'hoptoad_notifier'
+  # config.gem "fastercsv"
+  # config.gem "newrelic_rpm" 
+  # config.gem "csv-mapper"
   # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "bj"
+  # config.gem "fastercsv"  
+  # config.gem "paperclip", :verion => "~> 2.7"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -64,9 +79,10 @@ Rails::Initializer.run do |config|
 #   :user_name => "dna@nrdpfcbackup.info",
 #   :password => "nrdpfc12",
 #}
-
- config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp 
+#  config.action_mailer.delivery_method = :file 
   config.action_mailer.default_content_type = "text/html" 
   config.action_mailer.default_url_options = { :host => "burrett.org" } 
   config.action_mailer.smtp_settings = { 

@@ -1,4 +1,5 @@
 class Sample < ActiveRecord::Base
+  
   belongs_to :organism
   belongs_to :locality_type
   belongs_to :shippingmaterial
@@ -24,20 +25,39 @@ class Sample < ActiveRecord::Base
   accepts_nested_attributes_for :mt_dnas
   
   before_save :assign_collected_YMD
-  after_create :send_sample_mail
+#  after_create :send_sample_mail
 
-  def send_sample_mail
-     Emailer.deliver_submission("mmoeyaert@nrdpfc.ca, mharnden@nrdpfc.ca, bseyler@nrdpfc.ca, james@burrett.org", "New Sample Submitted", self.submitted_by, self.project_id, self.field_code,self.date_submitted,self.shipping_date ) 
-  end
+#----- done in controller now
+#  def send_sample_mail
+#    Emailer.deliver_submission(EMAIL_SAMPLES, "New Sample Submitted", self.submitted_by, self.project_id, self.field_code,self.date_submitted,self.shipping_date, self.batch_number ) 
+#  end
 
   def assign_collected_YMD
-
     if self.collected_on_day.blank? or self.collected_on_month.blank? or self.collected_on_year.blank?
       self.date_collected = nil
     else
       self.date_collected = DateTime.strptime(self.collected_on_year + "/" + self.collected_on_month + "/" + self.collected_on_day, "%Y/%m/%d" )
     end
   end
+  
+def self.import(file)
+  spreadsheet = open_spreadsheet(file)
+  header = spreadsheet.row(1)
+  (2..spreadsheet.last_row).each do |i|
+    row = Hash[[header, spreadsheet.row(i)].transpose]
+    product = find_by_id(row["id"]) || new
+    product.attributes = row.to_hash.slice(*accessible_attributes)
+    product.save!
+  end
+end
 
+def self.open_spreadsheet(file)
+  case File.extname(file.original_filename)
+  when ".csv" then Csv.new(file.path, nil, :ignore)
+  when ".xls" then Excel.new(file.path, nil, :ignore)
+  when ".xlsx" then Excelx.new(file.path, nil, :ignore)
+  else raise "Unknown file type: #{file.original_filename}"
+  end
+end
   
 end

@@ -1,7 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :imports
   map.resources :samples
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  # map.import_proc '/import/proc/:id', :controller => "imports", :action => "proc_csv"
+
+  #resources :samples do
+  #  collection { post :import }
+  #end
+  
+# The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
@@ -11,6 +18,8 @@ ActionController::Routing::Routes.draw do |map|
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
   map.menu 'menu', :controller => 'samples', :action => 'menu'
+#  map.error 'error', :controller => 'imports', :action => 'error'
+ # map.import 'import', :controller => 'samples', :action => 'import', :method => 'get'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   </head>
-<html>
+	
 <style type="text/css">
 table, td, th
 {
@@ -18,6 +18,7 @@ th
 background-color:#d2dbec;
 color:black;
 }
+
 </style>
 
 <body>
@@ -34,16 +35,18 @@ color:black;
         </table>
 
           <table width="600" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
-    			<tr><td colspan=2><h2>Menu for Right Whale Samples</h2></td></tr>
+    			<tr><td colspan=3><h2>Menu for Right Whale Samples</h2></td></tr>
 	            <tr><td colspan=3><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
-				<tr><td colspan=2> Logged in as: <%= current_user.name%></td></tr>
-				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
-				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td colspan=3> Logged in as: <%= current_user.name%></td></tr>
+				<tr><td> <br></td></tr>
+				<tr><td width=30% ><%= link_to 'Submit a Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
+				<tr><td><%= link_to 'Edit and Track Samples', samples_path %></td><td colspan=2>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td><%= link_to 'Batch Entry Samples', imports_path %></td><td>Click here to Import Samples</td></tr>
 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
 				<tr><td><%= error_messages_for :user %></td></tr>
-				<tr><td colspan=2><a href="Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University.pdf">Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University</a></td></tr>
-    			<tr><td colspan=2><a href="importexport.pdf">Importing and Exporting Samples for Scientific Research</a></td></tr>
+				<tr><td> <br></td></tr><tr><td colspan=2><a href="Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University.pdf">Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University</a></td></tr>
+    			<tr><td> <br> </td></tr><tr><td colspan=2><a href="importexport.pdf">Importing and Exporting Samples for Scientific Research</a></td></tr>
          </table>
           <p align="left">&nbsp;</p>
           <p align="left">&nbsp;</p>
@@ -61,41 +64,4 @@ color:black;
     <p>&nbsp;</p></td>
    
 </table>
-
-
-<script type="text/javascript">
-    //image cycling javascript code    
-    var imageShown = 1;
-    var intervalID = setInterval("CycleImage()", 7000);  //initial cycle
-
-    function showImage(imgNum) {
-        clearInterval(intervalID); //turn off initial timer  
-              
-        for (var i = 1; i <= 5; i++) {
-            //turn off all pictures
-            document.getElementById("imgBig" + i).style.display = 'none';
-        }
-        //turn on requested image
-        document.getElementById("imgBig" + imgNum).style.display = 'block';
-        imageShown = imgNum; //track which is shown for cycling
-            
-        //after 10 seconds resume cycling
-        setTimeout("setNormalCycle()", 14000); //after click, start slower cycle
-        //intervalID =setInterval("CycleImage()", 1000); //after click, start slower cycle
-}
-
-function setNormalCycle() {
-    clearInterval(intervalID);
-    intervalID = setInterval("CycleImage()", 7000); 
-}
-
-function CycleImage()
-{
-    //Increment which image is not hidden
-    document.getElementById("imgBig" + imageShown).style.display = 'none';
-    imageShown++;
-    if (imageShown > 5) { imageShown = 1; }
-    document.getElementById("imgBig" + imageShown).style.display = 'block';
-    
-}
-</script>
+</html>

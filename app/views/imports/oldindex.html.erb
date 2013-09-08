@@ -1,0 +1,69 @@
+<style type="text/css">
+
+table, td, th
+{
+border-collapse:collapse;	
+border:0px ;
+text-align:left;
+}
+th
+{
+background-color:#d2dbec;
+color:black;
+}
+
+</style>
+
+<body>
+<table width="1024" border="0">
+  <tr>
+    <td width=900 height="450" bgcolor="#D2DBEC">
+	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="800" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+
+<% form_tag url_for(:controller => 'imports', :action => 'import'), :method => 'POST', :multipart => true do %>
+
+<table width="600" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
+    			<tr><td colspan=2><h3>Batch Importer for Right Whale Samples Max 50</h3></td></tr>
+	            <tr><td colspan=2><h3>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2></td></tr>
+
+				<% if ENV['RAILS_SITE'] == 'TRACKER' %>
+					<tr><td colspan=2 style=background-color:yellow><%= link_to 'Home', menu_path %></td></tr>
+				<%else%>
+					<tr><td colspan=2><%= link_to 'Home', menu_path %></td></tr>
+				<%end%>	
+
+				<tr><td colspan=2> Logged in as: <%= current_user.name%></td></tr>
+				<tr><td width=150 ><%= label_tag :model, "Type of Import" %></td><td><%= select_tag :model, import_model_options %></td></tr>
+				<tr><td><%= label_tag :import_file, "Batch File Name" %></td><td><%= file_field_tag :import_file %></td></tr>
+				<tr><td></td><td><%= submit_tag "Import Batch File" %></td></tr>
+    			<tr><td colspan=2><a href="whale_batch_template.csv">Download Batch Template</a></td></tr>
+
+<% end %>
+				<tr><td><%= link_to 'Edit / Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td><%= error_messages_for :user %></td></tr>
+
+</table>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+			<tr>
+              <td><div align="center">
+              	<%= image_tag "dfo.jpg", :alt => "1", :width => "228", :height => "50", :border => "0" %>
+				<%= image_tag "trentu.jpg", :alt => "1", :width => "162", :height => "50", :border => "0" %>
+				<%= image_tag "wwf.jpg", :alt => "1", :width => "37", :height => "50", :border => "0" %>
+				<%= image_tag "nrdpfc.jpg", :alt => "1", :width => "67", :height => "50", :border => "0"  %>
+				<%= image_tag "nea.jpg", :alt => "1", :width => "111", :height => "50", :border => "0" %>
+				<%= image_tag "canadianwhale.jpg", :alt => "1", :width => "153", :height => "50", :border => "0" %>
+				</div></td>
+			</tr>
+      </table>
+    <p>&nbsp;</p></td>
+   
+</table>
+</html>

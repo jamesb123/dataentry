@@ -1,0 +1,52 @@
+<html>
+<%= stylesheet_link_tag "basic" %>
+<style type="text/css">
+table, td, th
+td
+{
+vertical-align:middle;
+text-align:center;
+}
+</style>
+
+<table width="1024" border="0">
+  <tr>
+    <td width="900" height="450" bgcolor="#D2DBEC">
+	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr>
+		<td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
+          <tr>
+            <th scope="col"><p><%= image_tag "banner.jpg", :width => "900", :height => "169" %></p>
+              </th>
+          </tr>
+        </table>
+          
+<table width="904" height="10" align="left" cellspacing="2" cellpadding = "2" borderstyle="hidden">
+<div align="center">          
+<% if ENV['RAILS_SITE'] == 'TRACKER' %>
+	<h3 style=background-color:yellow><%= link_to 'DEMO Home', menu_path %></h3>
+<%else%>
+	<h3><%= link_to 'Home Menu', menu_path %></h3>
+<%end%>	
+
+	<% form_tag url_for(:controller => 'imports', :action => 'import'), :method => 'POST', :multipart => true do %>
+
+    	<h2>Batch Importer for Right Whale Samples - Maximum 50 Samples</h2>
+	    <h2>For help please contact Meagan Moeyaert,  mmoeyaert@nrdpfc.ca</h2>	
+		<h2>Logged in as: <%= current_user.name%></h2>
+		<table width="700" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
+	   		<tr style="font-weight:bold"><td width='10%'>Step</td><td width='40%'>Action</td><td width='40%'>Description</td></tr>
+	   		<tr><td>One</td><td><a href="whale_batch_template.csv">Download Batch Template</a></td><td>The empty spreadsheet in csv format</td></tr>
+			<tr><td>Two</td><td><%= file_field_tag :import_file, :accept => "text/csv" %></td><td>Choose the CSV Batch File to Upload.<br> Must end in .CSV</td></tr>
+			<tr><td>Three</td><td><%= submit_tag "Import Batch File" %></td><td>Import the batch file you just selected</td></tr>
+	<% end %>
+		<tr><td><%= error_messages_for :user %></td></tr>
+</table>
+</div>
+</table>
+</table>
+
+<!--<tr><td width='25%'><%= label_tag :model, "Type of Import" %></td><td width='35%'><%= select_tag :model, import_model_options %></td><td width='40%'>HELP import type</td></tr> -->
+
+
+
